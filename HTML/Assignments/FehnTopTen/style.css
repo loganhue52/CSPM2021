@@ -1,0 +1,35 @@
+/* Page background and alignment */
+body{
+    background-color: #202020;
+    color: #FFF;
+    align-items: center;
+}
+/* alignment for header */
+h1 {
+    text-align: center;
+}
+/* table formatting to make it look nice */
+/* for the table itself */
+table {
+    border-style: flat;
+    border-width: 1px;
+    border-color: #FFF;
+    background-color: #FFF;
+}
+/* and for the table headers and data */
+th, td {
+    border: 1px solid #FFF;
+    background-color: #202020;
+    padding: 5px;
+    text-align: center;
+}
+/* image formatting */
+img {
+    width: 500px;
+    height: 350px;
+}
+/* this is to make the table in the center of the page */
+.center {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
