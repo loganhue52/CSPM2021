@@ -6,6 +6,7 @@ body{
 header{
     color: #8c3826;
     background-color: #d2b48c;
+    text-align: center;
 }
 h1{
     line-height: 200%;
@@ -22,4 +23,10 @@ footer{
     font-size: 0.6em;
     text-align: center;
     font-style: italic;
+}
+#wrapper{
+    width: 80%;
+    background-color: #fefaeb;
+    margin-right: auto;
+    margin-left: auto;
 }
