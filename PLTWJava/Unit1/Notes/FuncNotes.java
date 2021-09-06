@@ -4,9 +4,9 @@ public class FuncNotes{
     public static void main(String[] args){
         //static means no object required
         convertMiletoKM();
-        calculateEnergy();
+        //calculateEnergy();
         //futureInvestments();
-        drivingCost();
+        //drivingCost();
     }
     private static void convertMiletoKM(){
         //recreate scanner objectand close the scanner object in each function
