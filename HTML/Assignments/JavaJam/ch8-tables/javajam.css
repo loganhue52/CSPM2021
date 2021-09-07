@@ -287,6 +287,8 @@ tr:nth-of-type(odd) {
         padding-left: 0em;
         flex-wrap: nowrap;
         justify-content: space-around;
+        /* display: flex; */
+        /* flex-direction: row; */
     }
     nav a:link {color:#fef6c2;}
     nav a:visited {color: #d2b48c;}
