@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="javajam.css">
+        <title>
+            JavaJam Application
+        </title>
+    </head>
+
+    <body>
+    <div id="wrapper">
+
+        <header><h1><a href="index.html">JavaJam Coffee Bar</a></h1></header>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+            </ul>
+        </nav>
+
+        <main>
+
+            <div id="herojobs"></div>
+
+            <h2>Jobs at JavaJam</h2>
+
+            <p>Want to work at JavaJam? Fill out the form below to start your application. All information is required.</p>
+
+            <form method="post" action="https://webdevbasics.net/scripts/javajam8.php">
+
+                <label for="myname">Name:</label>
+                        <input id="myname" placeholder="Your Name Please" type="text" required>
+
+                    <label for="myEmail">Email:</label>
+                        <input id="myEmail" placeholder="Your Email Please" type="email" required>
+
+                    <label for="myStart">Start Date:</label>
+                        <input id="myStart" type="date">
+                            
+
+                    <label for="exp">Experience:</label>
+                        <textarea id="exp" rows=2 cols=20 required></textarea>
+
+                    <button id="mySubmit" type="Submit" value="Apply Now">Submit</button>
+            </form>
+        </main>
+
+        <footer>
+            Copyright 2020 JavaJam Coffee Bar<br>
+            <a href="mailto:loganfehn@gmail.com">logan@fehn.com</a>
+        </footer>
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,559 @@
+table{
+    width: 90%;
+    align: center;
+    border-spacing: 0em;
+}
+td, th {
+    padding: 10px;
+}
+tr:nth-of-type(odd) {
+    background-color: #d2b48e;
+}
+
+#herojobs{
+    height: 300px;
+    background-image: url("images/coffeecup.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1em;
+    width: 80%;
+}
+
+input, textarea {
+    margin-bottom: 0.5em;
+}
+
+audio {
+    display: block;
+    margin-top: 1em;
+}
+
+@media(min-width:1024px){
+    body{
+        background-color: #fcebb6;
+        color: #221811;
+        font-family: Tahoma, Arial, sans-serif;
+        background-image: url("images/fadedroad50.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    header{
+        color: #231814;
+        background-color: #d2b48c;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-image: url("images/coffeelogo.jpg");
+        background-repeat: no-repeat;
+        padding-left: 240px;
+        grid-area: header;
+    }
+    header a {
+        text-decoration: none;
+    }
+    header a:link{
+        color: #231814;
+    }
+    header a:visited{
+        color: #231814;
+    }
+    header a:hover{
+        color: #fef6c2;
+    }
+    main{
+        padding-left: 0em;
+        padding-right: 0em;
+        padding-bottom: 2em;
+        margin-left: 200px;
+        padding-top: 0em;
+        background-color: #fef6c2;
+        overflow: auto;
+        display: block;
+        grid-area: main;
+    }
+    a{
+        padding-right: 0.5em;
+    }
+    h1{
+        font-size: 3em;
+    }
+    h2{
+        color: #8c3826;
+        padding-left: 3em;
+        padding-right: 2em;
+    }
+    h3{
+        color: #8c3826;
+        padding-left: 3em;
+        padding-right: 2em;
+    }
+    h4{
+        background-color: #d2b48c;
+        font-size: 1.2em;
+        padding-left: 3em;
+        padding-right: 2em;
+        padding-bottom: 0.25em;
+        text-transform: capitalize;
+        border-bottom: #221814;
+        padding-bottom: 0em;
+        clear: left;
+    }
+    p{
+        padding-left: 3em;
+        padding-right: 2em;
+    }
+    div{
+        padding-left: 3em;
+        padding-right: 2em;
+    }
+    ul , dl {
+        padding-left: 3em;
+        padding-right: 2em;
+    }
+    img{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    dt{
+        color: #8c3826;
+        padding-top: 1em;
+    }
+    nav{
+        text-align: center;
+        font-weight: bold;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        font-size: 1.5em;
+        width: 200px;
+        float: left;
+        grid-area: nav;
+    }
+    nav a {
+        text-decoration: none;
+    }
+    nav ul {
+        list-style-type: none;
+        padding-left: 0em;
+        flex-direction: column;
+    }
+    nav a:link {color:#fef6c2;}
+    nav a:visited {color: #d2b48c;}
+    nav a:hover{color: #cc9933;}
+    footer{
+        background-color: #d2b48c;
+        font-size: 0.6em;
+        text-align: center;
+        font-style: italic;
+        padding: 1em;
+        border-top: 2px #8c3826;
+        grid-area: footer;
+    }
+    form {
+        display: grid;
+        grid-gap: 1em;
+        grid-template-columns: 6em 1fr;
+        width: 40%;
+    }
+    form button {
+        grid-column: 2;
+        width: 9em;
+    }
+    #herojobs{
+        background-image: url("images/herojobs");
+    }
+    #wrapper{
+        min-width: 900px;
+        max-width: 1280px;
+        box-shadow: #221811;
+        width: 80%;
+        background-color: #231814;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0em;
+        display: grid;
+        grid-template: "header header" "nav main" "footer footer" / 200px;
+    }
+    #homehero{
+        background-image: url("images/hero.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        height:300px;
+        padding-bottom: 1em;
+    }
+    #heromugs{
+        background-image: url("images/heromugs.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        height:300px;
+        padding-bottom: 1em;
+    }
+    #heroguitar{
+        background-image: url("images/hero.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        height:300px;
+        padding-bottom: 1em;
+    }
+    .details{
+        padding-left: 20%;
+        padding-right: 20%;
+        overflow: auto;
+    }
+    .floatleft{
+        float: left;
+        padding-right: 2em;
+        padding-bottom: 2em;
+    }
+    .onethird{
+        float: left;
+        width: 33%;
+    }
+}
+
+@media(min-width:600px){
+    body{
+        background-color: #fcebb6;
+        color: #221811;
+        font-family: Tahoma, Arial, sans-serif;
+        background-image: url("images/fadedroad50.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    header{
+        text-align: center;
+        color: #231814;
+        background-color: #d2b48c;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-image: url("images/coffeelogo.jpg");
+        background-repeat: no-repeat;
+        padding-left: 0px;
+    }
+    header a {
+        text-decoration: none;
+    }
+    header a:link{
+        color: #231814;
+    }
+    header a:visited{
+        color: #231814;
+    }
+    header a:hover{
+        color: #fef6c2;
+    }
+    main{
+        padding-left: 0em;
+        padding-right: 0em;
+        padding-bottom: 2em;
+        margin-left: 200px;
+        padding-top: 0em;
+        background-color: #fef6c2;
+        overflow: auto;
+        display: block;
+    }
+    a{
+        padding-right: 0.5em;
+    }
+    h1{
+        font-size: 3em;
+    }
+    h2{
+        color: #8c3826;
+        padding-left: 3em;
+        padding-right: 2em;
+    }
+    h3{
+        color: #8c3826;
+        padding-left: 3em;
+        padding-right: 2em;
+    }
+    h4{
+        background-color: #d2b48c;
+        font-size: 1.2em;
+        padding-left: 3em;
+        padding-right: 2em;
+        padding-bottom: 0.25em;
+        text-transform: capitalize;
+        border-bottom: #221814;
+        padding-bottom: 0em;
+        clear: left;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    p{
+        padding-left: 3em;
+        padding-right: 2em;
+    }
+    div{
+        padding-left: 3em;
+        padding-right: 2em;
+    }
+    ul , dl {
+        padding-left: 3em;
+        padding-right: 2em;
+    }
+    img{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    dt{
+        color: #8c3826;
+        padding-top: 1em;
+    }
+    nav{
+        text-align: center;
+        font-weight: bold;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        font-size: 1.5em;
+        width: 200px;
+        float: left;
+    }
+    nav a {
+        text-decoration: none;
+    }
+    nav ul {
+        list-style-type: none;
+        padding-left: 0em;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        /* display: flex; */
+        /* flex-direction: row; */
+    }
+    nav a:link {color:#fef6c2;}
+    nav a:visited {color: #d2b48c;}
+    nav a:hover{color: #cc9933;}
+    footer{
+        background-color: #d2b48c;
+        font-size: 0.6em;
+        text-align: center;
+        font-style: italic;
+        padding: 1em;
+        border-top: 2px #8c3826;
+    }
+    #flow{
+        flex-direction: row;
+    }
+    #wrapper{
+        min-width: 900px;
+        max-width: 1280px;
+        box-shadow: #221811;
+        width: 80%;
+        background-color: #231814;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0em;
+    }
+    #homehero{
+        background-image: url("images/hero.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        height:50vh;
+        padding-bottom: 1em;
+    }
+    #heromugs{
+        background-image: url("images/heromugs.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        height:300px;
+        padding-bottom: 1em;
+    }
+    #heroguitar{
+        background-image: url("images/heroguitar.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        height:300px;
+        padding-bottom: 1em;
+    }
+    .details{
+        padding-left: 20%;
+        padding-right: 20%;
+        overflow: auto;
+        flex-direction: row;
+    }
+    .floatleft{
+        float: left;
+        padding-right: 2em;
+        padding-bottom: 2em;
+    }
+    .onethird{
+        float: left;
+        width: 33%;
+    }
+    #mobile{
+        display: none;
+    }
+    #desktop{
+        display: inline;
+    }
+}
+
+@media(max-width:600px){
+    body{
+        background-color: #d2b48c;
+        color: #221811;
+        font-family: Tahoma, Arial, sans-serif;
+        margin: 0em;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    header{
+        color: #231814;
+        background-color: #d2b48c;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-image: url("images/cup.jpg");
+        background-repeat: no-repeat;
+        padding-left: 105px;
+        height: 128px;
+    }
+    header a {
+        text-decoration: none;
+    }
+    header a:link{
+        color: #231814;
+    }
+    header a:visited{
+        color: #231814;
+    }
+    header a:hover{
+        color: #fef6c2;
+    }
+    main{
+        padding-left: 0em;
+        padding-right: 0em;
+        padding-bottom: 2em;
+        padding-top: 0em;
+        background-color: #fef6c2;
+        display: block;
+    }
+    a{
+        padding-right: 0.5em;
+    }
+    h1{
+        font-size: 2em;
+    }
+    h2{
+        color: #8c3826;
+        padding-left: 3em;
+        padding-right: 2em;
+    }
+    h3{
+        color: #8c3826;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    h4{
+        background-color: #d2b48c;
+        font-size: 1.2em;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-bottom: 0.25em;
+        text-transform: capitalize;
+        border-bottom: #221814;
+        padding-bottom: 0em;
+        clear: left;
+    }
+    p{
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    div{
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    main ul {
+        padding-left: 2em;
+        padding-right: 1em;
+    } 
+    dl, ul {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    img{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    dt{
+        color: #8c3826;
+        padding-top: 1em;
+    }
+    nav{
+        text-align: center;
+        font-size: 1.5em;
+    }
+    nav a {
+        text-decoration: none;
+    }
+    nav ul {
+        flex-direction: column;
+        list-style-type: none;
+        margin: 0em;
+        padding: 0em;
+        font-size: 1.25em;
+    }
+    nav li{
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        padding-left: 1em;
+        padding-right: 1em;
+        width: 100%;
+        border-bottom: 1px;
+    }
+    nav a:link {color:#fef6c2;}
+    nav a:visited {color: #d2b48c;}
+    nav a:hover{color: #cc9933;}
+    footer{
+        background-color: #d2b48c;
+        font-size: 0.6em;
+        text-align: center;
+        font-style: italic;
+        padding: 1em;
+        border-top: 2px #8c3826;
+    }
+    #wrapper{
+        background-color: #231814;
+        padding: 0em;
+    }
+    #homehero{
+        background-image: url("images/road.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        height:300px;
+        padding-bottom: 1em;
+    }
+    #heromugs{
+        background-image: url("images/threemugs.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        height:300px;
+        padding-bottom: 1em;
+    }
+    #heroguitar{
+        background-image: url("images/guitar.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        height:300px;
+        padding-bottom: 1em;
+    }
+    .details{
+        padding-left: 20%;
+        padding-right: 20%;
+        overflow: auto;
+    }
+    #mobile{
+        display: inline;
+    }
+    #desktop{
+        display: none;
+    }
+}
+
+* {box-sizing: border-box;}
