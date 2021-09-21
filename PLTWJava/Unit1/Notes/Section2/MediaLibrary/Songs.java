@@ -1,3 +1,5 @@
+package PLTWJava.Unit1.Notes.Section2.MediaLibrary;
+
 public class Songs {
     //title, artist, rating, price, duration
     String title;

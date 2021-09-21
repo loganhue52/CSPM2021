@@ -1,3 +1,5 @@
+package PLTWJava.Unit1.Notes.Section1.RPSLS;
+
 public class Logan {
     //first init those global vars
     String hair;

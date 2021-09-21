@@ -1,4 +1,4 @@
-package PLTWJava.Unit1.Notes;
+package PLTWJava.Unit1.Notes.Section1;
 import java.lang.Math;
 
 public class JavaMath {
