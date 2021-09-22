@@ -4,9 +4,9 @@ import java.lang.Math;
 
 public class FehnU1S12Problems {
     public static void main(String[] args){
-        // triangleArea();
-        // midPointTable();
-        // minuteYearConverter();
+        triangleArea();
+        midPointTable();
+        minuteYearConverter();
         triangleVolume();
     }
     private static void triangleArea(){
