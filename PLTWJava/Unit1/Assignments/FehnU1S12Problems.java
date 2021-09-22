@@ -58,6 +58,14 @@ public class FehnU1S12Problems {
         ui.close();
     }
     private static void triangleVolume(){
-        
+        Scanner ui = new Scanner(System.in);
+        System.out.print("Sides: ");
+        double s = ui.nextDouble();
+        System.out.print("Height: ");
+        double h = ui.nextDouble();
+        double area = (Math.sqrt(3)/4)*Math.pow(s, 2);
+        double vol = area*h;
+        System.out.printf("Area: %.2f\nVolume: %.2f",area,vol);
+        ui.close();
     }
 }
