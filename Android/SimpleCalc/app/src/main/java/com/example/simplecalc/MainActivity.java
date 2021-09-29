@@ -33,9 +33,46 @@ public class MainActivity extends AppCompatActivity {//extend the AppCompatActiv
 
         out = findViewById(R.id.output);
 
+        //set up the button with an algorithm
+        divBTN.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                int num1 = Integer.parseInt(String.valueOf(n1TXT.getText()));
+                int num2 = Integer.parseInt(String.valueOf(n2TXT.getText()));
+                int answer = num1/num2;
+                out.setText(String.valueOf(answer));
+            }
+        });
+        mulBTN.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                int num1 = Integer.parseInt(String.valueOf(n1TXT.getText()));
+                int num2 = Integer.parseInt(String.valueOf(n2TXT.getText()));
+                int answer = num1*num2;
+                out.setText(String.valueOf(answer));
+            }
+        });
 
     }
-    public void test(){
+    public void test(View v){
+
         String input = String.valueOf(n1TXT.getText());
+        out.setText(input);
     }
+    //these are for hard coding the onClick
+    public void add(View v){
+        int num1 = Integer.parseInt(String.valueOf(n1TXT.getText()));
+        int num2 = Integer.parseInt(String.valueOf(n2TXT.getText()));
+        int answer = num1+num2;
+        out.setText(String.valueOf(answer));
+    }
+    public void subtract(View v){
+        int num1 = Integer.parseInt(String.valueOf(n1TXT.getText()));
+        int num2 = Integer.parseInt(String.valueOf(n2TXT.getText()));
+        int answer = num1-num2;
+        out.setText(String.valueOf(answer));
+    }
+
 }

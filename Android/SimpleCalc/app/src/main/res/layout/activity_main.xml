@@ -13,6 +13,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="116dp"
         android:text="@string/_1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,9 +23,9 @@
         android:layout_height="52dp"
         android:layout_marginTop="116dp"
         android:layout_marginEnd="16dp"
-        android:hint="@string/enter_a_number"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:hint="@string/enter_a_number"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="LabelFor" />
@@ -36,6 +37,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="232dp"
         android:text="@string/_2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,8 +49,8 @@
         android:layout_marginEnd="16dp"
         android:autofillHints="Fill Text"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/enter_a_number"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="LabelFor" />
@@ -59,7 +61,7 @@
         android:layout_height="49dp"
         android:layout_marginStart="12dp"
         android:layout_marginBottom="300dp"
-        android:onClick="test"
+        android:onClick="add"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -70,6 +72,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="112dp"
         android:layout_marginBottom="300dp"
+        android:onClick="subtract"
         android:text="-"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -96,10 +99,11 @@
 
     <TextView
         android:id="@+id/output"
-        android:layout_width="173dp"
-        android:layout_height="68dp"
+        android:layout_width="113dp"
+        android:layout_height="77dp"
         android:layout_marginBottom="136dp"
         android:text="Output"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
