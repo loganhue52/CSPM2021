@@ -5,5 +5,6 @@ public class FehnTextAdventureR1{
     public static void main(String[] args){
         Scanner ui = new Scanner(System.in);
         
+        ui.close();
     }
 }
