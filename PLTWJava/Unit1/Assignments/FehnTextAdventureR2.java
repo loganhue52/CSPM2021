@@ -3,14 +3,14 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FehnTextAdventureR1{
+public class FehnTextAdventureR2{
     public static void main(String[] args){
         Scanner ui = new Scanner(System.in);
         System.out.print("Enter you're character's name: ");
         String userName = ui.next();
         List<String> inventory = new ArrayList<>();
 
-        System.out.printf("\nWeird Old Man: \nWelcome to Aurora, %f! \nI see you've never been here before... allow me to show you around.",userName);
+        System.out.printf("\nWeird Old Man: \nWelcome to Aurora, %s! \nI see you've never been here before... allow me to show you around.",userName);
 
         System.out.println("\nWeird Old Man: \nOver there (as he points to the left) is the blacksmith. \nThere, you can buy swords, knives, custom-made armor, and even shields!");
         System.out.println("Across from the blacksmith is the food store, they always have fresh fruits. ");
@@ -33,13 +33,13 @@ public class FehnTextAdventureR1{
                 if (bsChoiceOne.equals("yes")){
                     System.out.print("Blacksmith: What can I make for ya? (one word): ");
                     String bsMake = ui.nextLine().toLowerCase();
-                    System.out.printf("\nBlacksmith: A %f huh? I can make that for 20 gold coins.",bsMake);
+                    System.out.printf("\nBlacksmith: A %s huh? I can make that for 20 gold coins.",bsMake);
                     //could've created a procedure for adding items to the inventory but im going to leave it a bit wet
                     //since the math and things added to inventory are different for multiple locations/what you buy
                     coins -= 20;
-                    System.out.printf("\nGold Coins Left: ", coins);
+                    System.out.printf("\nGold Coins Left: %f", coins);
                     inventory.add(bsMake);
-                    System.out.printf("\n%f added to inventory.",bsMake);
+                    System.out.printf("\n%s added to inventory.",bsMake);
                     System.out.println("Inventory:");
                     for (String i : inventory) {
                         System.out.println(i);
@@ -117,7 +117,7 @@ public class FehnTextAdventureR1{
                                 inventory.add("5x Apples");
                                 Sistem.out.println("-1 coin");
                                 coins -= 1;
-                                System.out.printf("Gold Coins Left: ", coins);
+                                System.out.printf("Gold Coins Left: %f", coins);
                                 System.out.println("\n5x Apples added to inventory.");
                                 System.out.println("Inventory:");
                                 for (String i : inventory) {
@@ -128,7 +128,7 @@ public class FehnTextAdventureR1{
                                 inventory.add("3x Oranges");
                                 System.out.println("-1 coin");
                                 coins -= 1;
-                                System.out.printf("Gold Coins Left: ", coins);
+                                System.out.printf("Gold Coins Left: %f", coins);
                                 System.out.println("\n3x Oranges added to inventory.");
                                 System.out.println("Inventory:");
                                 for (String i : inventory) {
@@ -139,7 +139,7 @@ public class FehnTextAdventureR1{
                                 inventory.add("3x Corn Stock");
                                 System.out.println("-1 coin");
                                 coins -= 1;
-                                System.out.printf("Gold Coins Left: ", coins);
+                                System.out.printf("Gold Coins Left: %f", coins);
                                 System.out.println("\n3x Corn Stock added to inventory.");
                                 System.out.println("Inventory:");
                                 for (String i : inventory) {
@@ -150,7 +150,7 @@ public class FehnTextAdventureR1{
                                 inventory.add("5x Bananas");
                                 System.out.println("-1 coin");
                                 coins -= 1;
-                                System.out.printf("Gold Coins Left: ", coins);
+                                System.out.printf("Gold Coins Left: %f", coins);
                                 System.out.println("\n5x Bananas added to inventory.");
                                 System.out.println("Inventory:");
                                 for (String i : inventory) {
@@ -158,24 +158,20 @@ public class FehnTextAdventureR1{
                                 }
                             }
                             System.out.print("Enter names or numbers (type 'done' when done): ");
-                            fsPicker = ui.nextLine();
-                            System.out.println("Bethy: \nThanks for your business!\nI must close up shop now, it's getting pretty late.\nHope to see you again!");
-                            System.out.println("You have left the Fruit & Veggie Stop...");
-                            break;
+                            fsPicker = ui.nextLine().toLowerCase();
+                            
                         }
+                        System.out.println("Bethy: \nThanks for your business!\nI must close up shop now, it's getting pretty late.\nHope to see you again!");
+                        System.out.println("You have left the Fruit & Veggie Stop...");
+                        break;
                     }
             }
-            while locationChoice == "3" or locationChoice == "inn":
-                    print('''
-                    Hotel Clerk: "Howdy Stra...
-                                Wait a second... are you the new one in town?
-                    ''')
-                    htChoiceOne = input('(yes/no): ').lower()
-                    if htChoiceOne == "yes":
-                        print('''
-                        Hotel Clerk: "Ah yes! I thought so.
-                                    50% discount for you my friend!"
-                        ''')
+            while (locationChoice.contains("3") || locationChoice.contains("inn")){
+                    System.out.println("Hotel Clerk: Howdy Stra... \nWait a second... are you the new one in town?");
+                    System.out.print("(yes/no): ");
+                    String htChoiceOne = ui.nextLine().toLowerCase();
+                    if (htChoiceOne.equals("yes")){
+                        System.out.println("Hotel Clerk: Ah yes! I thought so. \n50% discount for you my friend!");
                         buyRoom = input('"You lookin\' to buy a room? Only 3 gold coins per night!" (yes/no): ')
                         if buyRoom == "yes":
                             nights = int(input("How many nights you stayin\'? (numbers): "))
@@ -219,6 +215,7 @@ public class FehnTextAdventureR1{
                             print('"Alrighty then..."')
                             print('You have left the Inn...')
                             break
+                    }
                     if htChoiceOne == "no":
                         print('''
                         Hotal Clerk: "Ah nevermind..
@@ -261,33 +258,31 @@ public class FehnTextAdventureR1{
                                 if userLeave == "leave":
                                     print('You have left the Inn...')
                                     break
-            while locationChoice == "4" or locationChoice == "horse breeder":
-                    print('''
-                    The horse breeder's shack is closed...
-                    The lights are off but someone is inside...
-                    ''')
-                    knockChoice = input('Knock? (yes/no): ').lower()
-                    if knockChoice == "yes":
-                        print('''
-                        Drunken man with a slur: "Go aWay, i\'M clOsed!!!"
-                        ''')
-                        print('You proceed to walk away...')
-                        break
-                    if knockChoice == "no":
-                        print('''
-                        You proceed to walk away...
-                        ''')
-                        break
-            #users can quit anytime they are on the location select screen since there is no technical end to the game
-            if locationChoice == "5" or locationChoice == "quit":
-                print('''
-                    Thank you for playing!
-                ''')
-                break
-            #this is to make sure users enter what I want them to
-            elif locationChoice != ("1" or "2" or "3" or "4" or "5" or "blacksmith" or "food shop" or "inn" or "horse breeder" or "quit"): 
-                print('Please enter a valid input! (Numbers or names of places)')
-                ui.close();
+            }
+            while (locationChoice.contains("4") || locationChoice.contains("horse breeder")){
+                    System.out.println("The horse breeder's shack is closed...\nThe lights are off but someone is inside...");
+                    System.out.print("Knock? (yes/no): ");
+                    String knockChoice = ui.nextLine().toLowerCase();
+                    if (knockChoice.equals("yes")){
+                        System.out.println("Drunken man with a slur: Go aWay, i'M clOsed!!!");
+                        System.out.println("You proceed to walk away...");
+                        break;
+                    }
+                    if (knockChoice.equals("no")){
+                        print("You proceed to walk away...");
+                        break;
+                    }
+            }
+            //users can quit anytime they are on the location select screen since there is no technical end to the game
+            if (locationChoice.contains("5") || locationChoice.contains("quit")){
+                System.out.println("Thank you for playing!");
+                break;
+            }
+            //this is to make sure users enter what I want them to
+            else if (!(locationChoice.contains("1") || locationChoice.contains("2") || locationChoice.contains("5") || locationChoice.contains("blacksmith") || locationChoice.contains("food shop"))){
+                System.out.println("Please enter a valid input! (Numbers or names of places)");
+            }
         }
+        ui.close();
     }
 }
