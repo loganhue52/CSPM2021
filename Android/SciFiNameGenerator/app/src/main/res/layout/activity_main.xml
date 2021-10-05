@@ -19,22 +19,25 @@
 
     <TextView
         android:id="@+id/output"
-        android:layout_width="109dp"
-        android:layout_height="52dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="128dp"
         android:text="@string/output"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="367dp"
+        android:layout_height="398dp"
         android:layout_marginStart="2dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="1dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -48,11 +51,12 @@
                 android:layout_width="137dp"
                 android:layout_height="53dp"
                 android:text="@string/first_name"
+                android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <EditText
                 android:id="@+id/firstTXT"
-                android:layout_width="222dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
@@ -69,11 +73,12 @@
                 android:layout_width="137dp"
                 android:layout_height="53dp"
                 android:text="@string/last_name"
+                android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <EditText
                 android:id="@+id/lastTXT"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
@@ -90,6 +95,7 @@
                 android:layout_width="137dp"
                 android:layout_height="53dp"
                 android:text="@string/city"
+                android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <EditText
@@ -111,6 +117,7 @@
                 android:layout_width="137dp"
                 android:layout_height="53dp"
                 android:text="@string/school"
+                android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <EditText
@@ -132,6 +139,7 @@
                 android:layout_width="137dp"
                 android:layout_height="wrap_content"
                 android:text="@string/brother_s_name"
+                android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <EditText
@@ -153,6 +161,7 @@
                 android:layout_width="137dp"
                 android:layout_height="53dp"
                 android:text="@string/sister_s_name"
+                android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <EditText
