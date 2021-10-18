@@ -32,6 +32,8 @@ public class ArrayAlgroithms {
             }
             i++;
         }
+
+        System.out.println(students);
     }
     private static void sum(double[] list){
         double sum = 0;

@@ -4,7 +4,7 @@
 public class Player{
     private String name;
     private int age;
-    private int school;
+    private String school;
     
     /* constructors */
     public Player(){
