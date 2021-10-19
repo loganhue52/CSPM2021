@@ -27,7 +27,7 @@ public class ArrayNotes{
         List<String> list = new ArrayList<>();
 
         list.add("this is");
-        list.add("an array");
+        list.add("an array list");
 
         //System.out.println(list);
 
