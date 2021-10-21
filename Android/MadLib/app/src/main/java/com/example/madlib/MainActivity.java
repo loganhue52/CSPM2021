@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     EditText nounTXT;
@@ -72,12 +73,33 @@ public class MainActivity extends AppCompatActivity {
                 "O say, does that %s-spangled banner yet wave\n" +
                 "O'er the land of the free and the home of the brave",verb1,noun1,adverb1,adj1,ptverb,noun2,verb2,adj2);
 
-        String madlib2 = String.format("For breakfast today I had %s.\n"+
-                "It was so %s and %s.\n"+
-                "After breakfast, I played some %s on my xbox.\n"+
-                "I then %s my dog and went a %s.\n"+
-                "",noun1,adj1,adj2,noun2,ptverb,verb1);
+        String madlib2 = String.format("I woke up to the %s smell\n"+
+                "of %s cooking in the kitchen downstairs.\n"+
+                "I %s down the stairs to see if I could\n"+
+                "%s with the dinner. My Mom said\n"+
+                "\"See if your sister needs a fresh %s.\"\n"+
+                "So I carried a tray of glasses full\n"+
+                "of %s into the dining room.",adj1,noun1,ptverb,verb1,noun2,noun2);
 
-        output.setText(madlib1);
+        String madlib3 = String.format("I can believe it's already Halloween!\n"+
+                        "I put on my %s and visit every house\n"+
+                        "in my neighborhood. Before I %s,\n"+
+                        "I make sure to grab my %s %s\n"+
+                        "to hold all of my candy.\n"+
+                        "Before It got too late, I %s %s\n"+
+                        "out of the door and went Trick or Treating!",noun1,verb1,adj1,noun2,adverb1,ptverb);
+
+        Random rn = new Random();
+        int choice = rn.nextInt(3) + 1;
+
+        if (choice==1){
+            output.setText(madlib1);
+        } else if (choice==2){
+            output.setText(madlib2);
+        } else if (choice==3){
+            output.setText(madlib3);
+        }
+
+
     }
 }
