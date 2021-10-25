@@ -1,4 +1,4 @@
-package PLTWJava.Unit1.Assignments;
+package Unit1.Assignments;
 
 public class Fehn115 {
     public static void main(String[] args){

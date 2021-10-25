@@ -1,4 +1,4 @@
-package PLTWJava.Unit1.Assignments;
+package Unit1.Assignments;
 import java.util.Scanner;
 import java.lang.Math;
 

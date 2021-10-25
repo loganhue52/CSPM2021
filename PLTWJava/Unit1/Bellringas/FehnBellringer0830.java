@@ -1,4 +1,4 @@
-package PLTWJava.Unit1.Bellringas;
+package Unit1.Bellringas;
 
 import java.util.Scanner;
 
