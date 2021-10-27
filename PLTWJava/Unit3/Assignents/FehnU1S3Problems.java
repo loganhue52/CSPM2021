@@ -4,9 +4,8 @@ public class FehnU1S3Problems {
     public static void main(String[] args){
         Scanner ui = new Scanner(System.in);
         int[] listy = new int[10];
-        int n;
         System.out.println("Input 10 numbers, end with 0 after 10th num: ");
-        n=ui.nextInt();
+        int n=ui.nextInt();
         int i = 0;
         while(!(n==0)){
             listy[i] = n;
@@ -14,6 +13,28 @@ public class FehnU1S3Problems {
             i++;
         }
         evenOddChecker(listy);
+        
+        System.out.print("Enter list1 size: ");
+        int[] list1 = new int[ui.nextInt()];
+        System.out.print("Enter list1 contents one by one: ");
+        n=ui.nextInt();
+        i = 0;
+        while(!(i==list1.length-1)){
+            list1[i] = n;
+            n=ui.nextInt();
+            i++;
+        }
+        System.out.print("Enter list2 size: ");
+        int[] list2 = new int[ui.nextInt()];
+        System.out.print("Enter list2 contents one by one: ");
+        n=ui.nextInt();
+        i = 0;
+        while(!(i==list2.length-1)){
+            list2[i] = n;
+            n=ui.nextInt();
+            i++;
+        }
+        merge(list1,list2);
 
         
 
