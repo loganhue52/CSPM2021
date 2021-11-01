@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/welcome_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -32,7 +32,7 @@
         tools:srcCompat="@drawable/index" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/sizeRG"
         android:layout_width="328dp"
         android:layout_height="61dp"
         android:layout_marginTop="352dp"
@@ -43,19 +43,19 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/smallRB"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:text="@string/small" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/medRB"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:text="@string/medium" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/lgRB"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:text="@string/large" />
@@ -104,21 +104,21 @@
             android:orientation="horizontal">
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/pepperoniCB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Pepperoni" />
 
             <CheckBox
-                android:id="@+id/checkBox3"
+                android:id="@+id/hamCB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Ham" />
 
             <CheckBox
-                android:id="@+id/checkBox2"
+                android:id="@+id/sausageCB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -132,26 +132,47 @@
             android:orientation="horizontal">
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/anchoviesCB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/anchovies" />
 
             <CheckBox
-                android:id="@+id/checkBox3"
+                android:id="@+id/baconCB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/bacon" />
 
             <CheckBox
-                android:id="@+id/checkBox2"
+                android:id="@+id/jalaCB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/jalapenos" />
         </LinearLayout>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/outputBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/outputTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Total"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outputBTN" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

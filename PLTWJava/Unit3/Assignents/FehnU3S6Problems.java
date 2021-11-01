@@ -1,6 +1,6 @@
 package Unit3.Assignents;
 import java.util.Scanner;
-public class FehnU1S3Problems {
+public class FehnU3S6Problems {
     public static void main(String[] args){
         Scanner ui = new Scanner(System.in);
         int[] listy = new int[10];
@@ -34,8 +34,7 @@ public class FehnU1S3Problems {
             n=ui.nextInt();
             i++;
         }
-        merge(list1,list2);
-
+        System.out.println("Merged list: "+merge(list1,list2));
         
 
         ui.close();
@@ -54,7 +53,7 @@ public class FehnU1S3Problems {
         
     }
     public static int[] merge(int[] list1, int[] list){
-
+        
     }
     public static boolean isSorted(int[] listy){
 
