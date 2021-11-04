@@ -7,13 +7,13 @@ public class FehnU3S6Problems {
         System.out.println("Input 10 numbers, end with 0 after 10th num: ");
         int n=ui.nextInt();
         int i = 0;
-        while(!(n==0)){
-            listy[i] = n;
-            n=ui.nextInt();
-            i++;
-        }
-        evenOddChecker(listy);
-        
+        // while(!(n==0)){
+        //     listy[i] = n;
+        //     n=ui.nextInt();
+        //     i++;
+        // }
+        //evenOddChecker(listy);
+        ////////////////////////////////////////////////////
         System.out.print("Enter list1 size: ");
         int[] list1 = new int[ui.nextInt()];
         System.out.print("Enter list1 contents one by one: ");
@@ -35,7 +35,23 @@ public class FehnU3S6Problems {
             i++;
         }
         System.out.println("Merged list: "+merge(list1,list2));
-        
+        /////////////////////////////////////////////////////
+
+        // System.out.print("Enter list size: ");
+        // int[] list = new int[ui.nextInt()];
+        // System.out.print("Enter list contents one by one: ");
+        // n=ui.nextInt();
+        // i = 0;
+        // while(!(i==list.length-1)){
+        //     list[i] = n;
+        //     n=ui.nextInt();
+        //     i++;
+        // }
+        // if(isSorted(list)){
+        //     System.out.println("The list is sorted");
+        // } else{
+        //     System.out.println("The list is NOT sorted");
+        // }
 
         ui.close();
     }
@@ -52,10 +68,17 @@ public class FehnU3S6Problems {
         System.out.printf("\nEvens: %f\nOdds: %f",evens,odds);
         
     }
-    public static int[] merge(int[] list1, int[] list){
+    public static int[] merge(int[] list1, int[] list2){
+        int[] mlist = new int[list1.length+list2.length];
         
+        return mlist;
     }
-    public static boolean isSorted(int[] listy){
-
+    public static boolean isSorted(int[] list){
+        for(int i=0;i<list.length-1;i++){
+            if(list[i]<list[i+1]){
+                return false;
+            }
+        }
+        return true;
     }
 }
