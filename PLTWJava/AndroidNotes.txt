@@ -1,0 +1,26 @@
+- Where do I add more Icons in the menu?
+    - menu/activity_main_drawer.xml
+    - item tag
+        - id
+        - icon
+        - title
+
+    - to add an icon
+        - right click drawable folder
+        - new -> vector asset
+        - click clip art for little icons or add your own image
+
+- Where to change menu top portion?
+    - layout/nav_header_main.xml
+
+- How do i remove floating action button?
+    - layout/app_bar_main.xml -> delete the button from design view
+    - MainActivity -> delete the binding.appbarMain.fab,setOnClickListener
+
+- How to add a new fragment
+    - go to ui folder and make new package
+    - go to mobile_navigation.xml -> design
+    - in the top left, click New Destination (box with a plus)
+    - create new destination -> fragment (blank) -> name it
+    - drag new class file into folder
+    - add R.id.fragment_name to mAppBarConfiguration in MainActivity
