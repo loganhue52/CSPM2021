@@ -1,21 +1,33 @@
+import java.util.Scanner;
 public class PasswordManager {
     public static void main(String[] args){
-        catDictionary={}
+        // https://www.educative.io/edpresso/how-to-create-a-dictionary-in-java
+        Hashtable<String,String> catDictionary = new Hashtable<String,String>();
 
-        logIn=False
-        askNewUser=input('Are you a new user? (y/n): ')
-        masterPass="p4$$w0rD"
-        if "y" in askNewUser.lower():
-            userFName=input('First Name: ')
-            userLName=input('Last Name: ')
-            userUName=input('Username: ')
-            print('New password must have:\n\t1 capital letter\n\t1 number\n\t1 special symbol: !,@,//,$,%,^,&,(,)\n\tLength of 8 or more')
-            masterPass=input('Master Password: ')
+        Scanner ui = new Scanner(System.in);
+
+        Boolean logIn=false;
+
+        System.out.print("Are you a new user? (y/n): ");
+        String askNewUser=ui.nextLine();
+
+        String masterPass="p4$$w0rD";
+
+        if(askNewUser.toLowerCase().contains("y")){
+            System.out.print("\nFirst Name: ");
+            String userFName=ui.nextLine();
+            System.out.print("\nLast Name: ");
+            String userLName=ui.nextLine();
+            System.out.print("\nUsername: ");
+            String userUName=ui.nextLine();
+            System.out.println("New password must have:\n\t1 capital letter\n\t1 number\n\t1 special symbol: !,@,//,$,%,^,&,(,)\n\tLength of 8 or more");
+            System.out.print("\nMaster Password: ");
+            masterPass=ui.nextLine();
             while Checker(masterPass).check()==False:
                 print('New password does not meet the requirements!')
                 masterPass=input('Master Password: ')
             print("Account created!")
-
+        }
         tries = 3
         while logIn==False:
             uI=input('Enter Master Password: ')

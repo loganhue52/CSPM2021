@@ -36,4 +36,5 @@
         app:layout_constraintStart_toStartOf="@+id/closeBTN"
         app:layout_constraintTop_toBottomOf="@+id/secondLBL" />
 
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>IntentExample</name>
-	<comment>Project IntentExample created by Buildship.</comment>
+	<name>GDRitz</name>
+	<comment>Project GDRitz created by Buildship.</comment>
 	<projects>
 	</projects>
 	<buildSpec>
@@ -16,7 +16,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1637345639898</id>
+			<id>1637345639894</id>
 			<name></name>
 			<type>30</type>
 			<matcher>

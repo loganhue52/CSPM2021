@@ -8,21 +8,25 @@
 
     <Button
         android:id="@+id/openBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="239dp"
+        android:layout_width="271dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="196dp"
         android:text="Go to menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="258dp"
-        android:text="This is the welcome screen"
+        android:id="@+id/welcomeText"
+        android:layout_width="324dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="245dp"
+        android:text="Welcome to the GD Ritzy's Self Serve Kiosk! This is the welcome screen."
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/openBTN"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
