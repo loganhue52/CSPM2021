@@ -1,8 +1,12 @@
 import java.util.Scanner;
+import java.util.List;
+import java.util.Hashtable;
+import java.util.Dictionary;
+
 public class PasswordManager {
     public static void main(String[] args){
         // https://www.educative.io/edpresso/how-to-create-a-dictionary-in-java
-        Hashtable<String,String> catDictionary = new Hashtable<String,String>();
+        Dictionary<String,String> catDictionary = new Hashtable<String,String>();
 
         Scanner ui = new Scanner(System.in);
 
@@ -22,77 +26,90 @@ public class PasswordManager {
             String userUName=ui.nextLine();
             System.out.println("New password must have:\n\t1 capital letter\n\t1 number\n\t1 special symbol: !,@,//,$,%,^,&,(,)\n\tLength of 8 or more");
             System.out.print("\nMaster Password: ");
-            masterPass=ui.nextLine();
-            while Checker(masterPass).check()==False:
-                print('New password does not meet the requirements!')
-                masterPass=input('Master Password: ')
-            print("Account created!")
+            masterPass = ui.nextLine();
+            while (!(Checker.check(masterPass))){
+                System.out.println("New password does not meet the requirements!");
+                System.out.print("Master Password: ");
+                masterPass = ui.nextLine();
+            }
+            System.out.println("Account created!");
         }
-        tries = 3
-        while logIn==False:
-            uI=input('Enter Master Password: ')
-            if uI == masterPass:
-                logIn = True
-                print('Log In Successful!')
-            elif uI != masterPass:
-                print('Log In Failed')
-                tries -= 1
-                print(f'{tries} tries remaining.')
-                //completely shuts down the program when they fail
-            if tries == 0:
-                print('Exiting...')
-                sys.exit()
+        int tries = 3;
+        while (logIn==false){
+            System.out.print("Enter Master Password: ");
+            String uIn = ui.nextLine();
+            if (uIn.equals(masterPass)){
+                logIn = true;
+                System.out.println("Log In Successful!");
+            }
+            else if (!(uIn.equals(masterPass))){
+                System.out.println("Log In Failed");
+                tries -= 1;
+                System.out.printf("\n{0} tries remaining.",tries);
+            }
+            //completely shuts down the program when they fail
+            if (tries == 0){
+                System.out.println("Exiting...");
+                System.exit(0);
+            }
+        }
             
         //print('Welcome.')
 
-        uI=""
-        while uI!="quit":
+        String uIn="";
+        while (!(uIn.equals("quit"))){
             //wanted to go for a more console-esk feel, like a command prompt password manager and less like an "app"
-            print('''
-            Commands:
-                ac - add catagory
-                ls - list catagories and passwords
-                ap - add password
-                rp - remove password
-                ep - edit password
-                gp - generate password
-                quit - exit
-            ''')
-            uI = input('> ')
+            System.out.println("Commands:\n\tac - add catagory\n\tls - list catagories and passwords\n\tap - add password\n\trp - remove password\n\tep - edit password\n\tgp - generate password\n\tquit - exit");
+            System.out.print("> ");
+            uIn = ui.nextLine();
             //these are all of my checkers to run fuctions when the user inputs a command
-            if "ac" in uI.lower():
-                addCatagory()
-            elif "ls" in uI.lower():
-                listFunc()
-            elif "ap" in uI.lower():
-                if fillCheck(catDictionary) == False:
-                    print('Please create a catagory first!')
-                else:
-                    addPass()
-            elif "rp" in uI.lower():
-                if fillCheck(catDictionary) == False:
-                    print('Please create a catagory first!')        
-                remPass()
-            elif "ep" in uI.lower():
-                if fillCheck(catDictionary) == False:
-                    print('Please create a catagory first!')
-                editPass()
-            elif "gp" in uI.lower():
-                print(f'Generated password: {Generator().generate()}')
-            elif "q" in uI:
-                sys.exit()
-            else:
-                print('Invalid input')
+            if (uIn.toLowerCase().contains("ac")){
+                addCatagory();
+            }
+            else if (uIn.toLowerCase().contains("ls")){
+                listFunc();
+            }
+            else if (uIn.toLowerCase().contains("ap")){
+                if (!(fillCheck(catDictionary))){
+                    System.out.println("Please create a catagory first!");
+                }
+                else{addPass();}
+            }
+            else if (uIn.toLowerCase().contains("rp")){
+                if (!(fillCheck(catDictionary))){
+                    System.out.println("Please create a catagory first!");
+                }
+                else{remPass();}
+            }
+            else if (uIn.toLowerCase().contains("ep")){
+                if (!(fillCheck(catDictionary))){
+                    System.out.println("Please create a catagory first!");
+                }
+                else{editPass();}
+            }
+            else if (uIn.toLowerCase().contains("gp")){
+                String genPass = Generator.generate();
+                System.out.printf("Generated password: {0}",genPass);
+            }
+            else if (uIn.toLowerCase().contains("q")){
+                System.exit(0);
+            }
+            else{
+                System.out.println("Invalid input");
+            }
+        }
     }
-    private static void addCatagory(){
-        uI=input('Catagory Name: ')
+    private static void addCatagory(Dictionary<String,String> dict){
+        Scanner ui = new Scanner(System.in);
+        System.out.print("Catagory Name: ");
+        String uIn = ui.nextLine();
         //making the stored dictionary values a list so i can remove specific indices
-        catDictionary[uI] = []
+        dict.put(uIn, "");
     }
-    private static void listFunc(){
+    private static void listFunc(Dictionary<String,String> dict){
         //for every key (the catagories) in the dictionary, print (catagory):
-        for i in catDictionary.keys():
-            print(i,":")
+        for (String i : (List<String>)(dict.keys())){
+            System.out.println(i + ":");
 
             //this conditional was to fix the issue of printing out one vs multiple values
             //if the value is a list, it iterates through the list
@@ -105,6 +122,7 @@ public class PasswordManager {
             else:
                 print("\t",catDictionary[i])
                 print()
+        }
     }
     private static void addPass(){
             //this placed variable was a debug thing i did but decided to keep because it works
@@ -199,7 +217,7 @@ public class PasswordManager {
                 print('Invalid Input')
     }
     //this function makes sure that there are values in what is passed in
-    private static void fillCheck(i){
+    private static Boolean fillCheck(Hashtable<String,String> i){
         if str(i) == "":
             return False
         elif i == {}:
