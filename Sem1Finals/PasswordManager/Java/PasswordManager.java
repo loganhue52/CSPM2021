@@ -1,12 +1,13 @@
 import java.util.Scanner;
 import java.util.List;
-import java.util.Hashtable;
-import java.util.Dictionary;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
 
 public class PasswordManager {
     public static void main(String[] args){
-        // https://www.educative.io/edpresso/how-to-create-a-dictionary-in-java
-        Dictionary<String,String> catDictionary = new Hashtable<String,String>();
+
+        List<Account> mainMap = new ArrayList<>();
 
         Scanner ui = new Scanner(System.in);
 
@@ -32,7 +33,7 @@ public class PasswordManager {
                 System.out.print("Master Password: ");
                 masterPass = ui.nextLine();
             }
-            System.out.println("Account created!");
+            System.out.println("Profile created!");
         }
         int tries = 3;
         while (logIn==false){
@@ -59,33 +60,36 @@ public class PasswordManager {
         String uIn="";
         while (!(uIn.equals("quit"))){
             //wanted to go for a more console-esk feel, like a command prompt password manager and less like an "app"
-            System.out.println("Commands:\n\tac - add catagory\n\tls - list catagories and passwords\n\tap - add password\n\trp - remove password\n\tep - edit password\n\tgp - generate password\n\tquit - exit");
+            System.out.println("Commands:\n\tls - list accounts by catagory\n\taa - add account\n\tra - remove account\n\tea - edit account\n\tgp - generate password\n\tquit - exit");
             System.out.print("> ");
             uIn = ui.nextLine();
             //these are all of my checkers to run fuctions when the user inputs a command
-            if (uIn.toLowerCase().contains("ac")){
-                addCatagory();
+            // if (uIn.toLowerCase().contains("ac")){
+            //     addCatagory(mainMap);
+            // }
+            if (uIn.toLowerCase().contains("ls")){
+                listFunc(mainMap);
             }
-            else if (uIn.toLowerCase().contains("ls")){
-                listFunc();
-            }
-            else if (uIn.toLowerCase().contains("ap")){
-                if (!(fillCheck(catDictionary))){
-                    System.out.println("Please create a catagory first!");
-                }
-                else{addPass();}
+            else if (uIn.toLowerCase().contains("aa")){
+                // if (!(fillCheck(mainMap))){
+                //     System.out.println("Please create a catagory first!");
+                // }
+                // else{
+                addPass(mainMap);
             }
             else if (uIn.toLowerCase().contains("rp")){
-                if (!(fillCheck(catDictionary))){
-                    System.out.println("Please create a catagory first!");
-                }
-                else{remPass();}
+                // if (!(fillCheck(catDictionary))){
+                //     System.out.println("Please create a catagory first!");
+                // }
+                // else{
+                remPass(mainMap);
             }
             else if (uIn.toLowerCase().contains("ep")){
-                if (!(fillCheck(catDictionary))){
-                    System.out.println("Please create a catagory first!");
-                }
-                else{editPass();}
+                // if (!(fillCheck(catDictionary))){
+                //     System.out.println("Please create a catagory first!");
+                // }
+                // else{
+                editPass(mainMap);
             }
             else if (uIn.toLowerCase().contains("gp")){
                 String genPass = Generator.generate();
@@ -99,87 +103,102 @@ public class PasswordManager {
             }
         }
     }
-    private static void addCatagory(Dictionary<String,String> dict){
-        Scanner ui = new Scanner(System.in);
-        System.out.print("Catagory Name: ");
-        String uIn = ui.nextLine();
-        //making the stored dictionary values a list so i can remove specific indices
-        dict.put(uIn, "");
-    }
-    private static void listFunc(Dictionary<String,String> dict){
+    // private static void addCatagory(List<Account> listy){
+    //     List<String> values = new ArrayList<>();
+    //     Scanner ui = new Scanner(System.in);
+    //     System.out.print("Catagory Name: ");
+    //     String uIn = ui.nextLine();
+    //     //making the stored dictionary values a list so i can remove specific indices
+    //     dict.put(uIn, values);
+    //     return dict;
+    // }
+    private static void listFunc(List<Account> dict){
         //for every key (the catagories) in the dictionary, print (catagory):
-        for (String i : (List<String>)(dict.keys())){
-            System.out.println(i + ":");
-
-            //this conditional was to fix the issue of printing out one vs multiple values
-            //if the value is a list, it iterates through the list
-            //if it isnt, it just prints that value
-            //Credit to Gaege for this one
-            if type(catDictionary[i]) == list:
-                for j in catDictionary[i]:
-                    print("\t",j)
-                print()
-            else:
-                print("\t",catDictionary[i])
-                print()
+        List<String> catList = new ArrayList<>();
+        for (Account i : dict){
+            String cat = i.getCatagory();
+            if (!(catList.contains(cat))){
+                catList.add(cat);
+            }
+        }
+        for (String i : catList){
+            //print accouts by catagories in catList
         }
     }
-    private static void addPass(){
-            //this placed variable was a debug thing i did but decided to keep because it works
-            placed=False
-            //telling the user the requirements
-            print('New password must have:\n\t1 capital letter\n\t1 number\n\t1 special symbol: !,@,//,$,%,^,&,(,)\n\tLength of 8 or more')
-            newPass=input('New password: ')
-            //this makes sure that they enter a password that meets the requirements
-            while Checker(newPass).check()==False:
-                print('New password does not meet the requirements!')
-                newPass=input('New password: ')
-            print('Please select a catagory to add your password to.\n(use "ls" to list catagories and passwords.)')
-            while placed==False:
-                //wasn't sure if i should keep this but i did
-                uI=input('> ')
-                if uI=="ls":
-                    listFunc()
-                    uI=input('> ')
-                //makes sure that the catagory the user chose was an actual catagory
-                if uI in catDictionary.keys():
-                    catDictionary[uI].append(newPass)
-                    placed=True
-                else:
-                    print('Invalid catagory, try again.')
-            //print(catDictionary)
+    private static Map<String,List<String>> addPass(Map<String,List<String>> dict){
+        Scanner ui = new Scanner(System.in);
+        //this placed variable was a debug thing i did but decided to keep because it works
+        Boolean placed=false;
+        //telling the user the requirements
+        System.out.println("New password must have:\n\t1 capital letter\n\t1 number\n\t1 special symbol: !,@,//,$,%,^,&,(,)\n\tLength of 8 or more");
+        System.out.print("New password: ");
+        String newPass=ui.nextLine();
+        //this makes sure that they enter a password that meets the requirements
+        while (Checker.check(newPass)==false){
+            System.out.println("New password does not meet the requirements!");
+            System.out.print("New password: ");
+            newPass=ui.nextLine();
+        }
+        System.out.println("Please select a catagory to add your password to.\n(use 'ls' to list catagories and passwords.)");
+        while (placed==false){
+            //wasn't sure if i should keep this but i did
+            System.out.print("> ");
+            String uIn=ui.nextLine();
+            if (uIn.equals("ls")){
+                listFunc(dict);
+                System.out.print("\n> ");
+                uIn=ui.nextLine();
+            }
+            //makes sure that the catagory the user chose was an actual catagory
+            if (dict.keySet().contains(uIn)){
+                dict.get(uIn).add(newPass);
+                placed=true;
+            }
+            else{
+                System.out.println("Invalid catagory, try again.");
+            }
+        //print(catDictionary)
+        }
     }
-    private static void remPass(){
-            while True:
-                x = 0
-                uCat = input('Catagory Name: ')
-                if fillCheck(catDictionary[uCat]) == False:
-                    print('There are no passwards in this catagory!')
-                    return
-                if uCat in catDictionary.keys():
-                    if type(catDictionary[uCat]) == list:
-                        for i in catDictionary[uCat]:
-                            x+=1
-                            print(f'{x}.',i)
-                        break
-                    else:
-                        print("1.",catDictionary[uCat])
-                        break
-                else:
-                    print('Invalid catagory')
-            uI=input('Select the password to remove: ')
-            //couldn't figure out how to remove specific values from a dictionary key, so i made the values for the dict a list
-            k = int(uI)-1
-            //the user can either put in the exact password or the number cooresponding to it
-            //the following conditional is for if they entered a number or the exact password
-            if uI in catDictionary[uCat]:
-                // i = str(catDictionary[uCat])
-                indice=int(catDictionary[uCat].index(uI))
-                catDictionary[uCat] = catDictionary[uCat][:indice]+catDictionary[uCat][indice+1:]
-            elif catDictionary[uCat][k] != "":
-                catDictionary[uCat] = catDictionary[uCat][:k]+catDictionary[uCat][k+1:]
-            else:
-                print('Invalid Input')
+    private static Map<String,List<String>> remPass(Map<String,List<String>> dict){
+        Scanner ui = new Scanner(System.in);
+        while (true){
+            int x = 0;
+            System.out.print("Catagory Name: ");
+            String uCat = ui.nextLine();
+            if (dict.isEmpty()){
+                System.out.println("There are no passwards in this catagory!");
+                break;
+            }
+            if (dict.keys().toString().contains(uCat)){
+                // if type(catDictionary[uCat]) == list:
+                //need to find a way to iterate through the values of the uCat key
+                for (String i : dict[uCat]){
+                    x+=1
+                    print(f'{x}.',i)
+                }
+                // break
+                // else:
+                //     print("1.",catDictionary[uCat])
+                //     break
+            }
+            else{
+                System.out.println("Invalid catagory");
+            }
+        }
+        uI=input('Select the password to remove: ')
+        //couldn't figure out how to remove specific values from a dictionary key, so i made the values for the dict a list
+        k = int(uI)-1
+        //the user can either put in the exact password or the number cooresponding to it
+        //the following conditional is for if they entered a number or the exact password
+        if uI in catDictionary[uCat]:
+            // i = str(catDictionary[uCat])
+            indice=int(catDictionary[uCat].index(uI))
+            catDictionary[uCat] = catDictionary[uCat][:indice]+catDictionary[uCat][indice+1:]
+        elif catDictionary[uCat][k] != "":
+            catDictionary[uCat] = catDictionary[uCat][:k]+catDictionary[uCat][k+1:]
+        else:
+            print('Invalid Input')
     }
     private static void editPass(){
             while True:
@@ -217,14 +236,14 @@ public class PasswordManager {
                 print('Invalid Input')
     }
     //this function makes sure that there are values in what is passed in
-    private static Boolean fillCheck(Hashtable<String,String> i){
-        if str(i) == "":
-            return False
-        elif i == {}:
-            return False
-        elif i == []:
-            return False
-        else:
-            return True
+    // private static Boolean fillCheck(Dictionary<String,String> i){
+    //     if str(i) == "":
+    //         return False
+    //     elif i == {}:
+    //         return False
+    //     elif i == []:
+    //         return False
+    //     else:
+    //         return True
     }
 }

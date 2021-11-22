@@ -52,8 +52,8 @@ public class Generator{
         return password;
 
     }
-
-    public static int getRandInt(int minimum, int maximum){
+    //https://www.java67.com/2015/01/how-to-get-random-number-between-0-and-1-java.html
+    private static int getRandInt(int minimum, int maximum){
         return ((int) (Math.random()*(maximum - minimum))) + minimum;
     }
 }
