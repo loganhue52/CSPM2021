@@ -5,9 +5,9 @@ public class Account {
     String catagory;
 
     public Account(String t, String u, String p, String c){
+        title = t;
         username = u;
         password = p;
-        title = t;
         catagory = c;
     }
     public void setUsername(String u){
