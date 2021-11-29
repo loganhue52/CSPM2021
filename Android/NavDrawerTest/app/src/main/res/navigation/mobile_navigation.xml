@@ -28,4 +28,9 @@
         android:name="com.example.navdrawertest.ui.dice.DiceFragment"
         android:label="Dice Game"
         tools:layout="@layout/fragment_dice" />
+    <fragment
+        android:id="@+id/nav_dice4"
+        android:name="com.example.navdrawertest.ui.dice.dice4"
+        android:label="4 sided dice"
+        tools:layout="@layout/fragment_dice4" />
 </navigation>

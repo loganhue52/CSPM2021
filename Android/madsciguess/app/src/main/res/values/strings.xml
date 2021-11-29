@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NavDrawerTest</string>
+    <string name="app_name">madsciguess</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -10,11 +10,9 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    <string name="dice">Dice</string>
-    <string name="dice_game">dice game</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="example">example</string>
-    <string name="dice1">dice1</string>
-    <string name="_4_sided_dice">4 sided dice</string>
+    <string name="mad_lib">Mad Lib</string>
+    <string name="sci_fi_name_generator">Sci-Fi Name Generator</string>
+    <string name="guessing_game">Guessing Game</string>
 </resources>

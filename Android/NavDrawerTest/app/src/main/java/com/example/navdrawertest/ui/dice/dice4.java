@@ -17,7 +17,7 @@ import com.example.navdrawertest.R;
 
 import java.util.Random;
 
-public class DiceFragment extends Fragment {
+public class dice4 extends Fragment {
 
     private ImageView dice;
 
@@ -41,7 +41,7 @@ public class DiceFragment extends Fragment {
     private void rollDice(){
         //random num 1-6
         Random rand = new Random();
-        int num = rand.nextInt(6);
+        int num = rand.nextInt(4);
 
         switch (num){
             case 0:
@@ -55,12 +55,6 @@ public class DiceFragment extends Fragment {
                 break;
             case 3:
                 dice.setImageResource(R.drawable.dice4);
-                break;
-            case 4:
-                dice.setImageResource(R.drawable.dice5);
-                break;
-            case 5:
-                dice.setImageResource(R.drawable.dice6);
                 break;
         }
 
