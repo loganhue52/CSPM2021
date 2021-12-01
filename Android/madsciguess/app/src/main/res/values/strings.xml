@@ -15,4 +15,18 @@
     <string name="mad_lib">Mad Lib</string>
     <string name="sci_fi_name_generator">Sci-Fi Name Generator</string>
     <string name="guessing_game">Guessing Game</string>
+    <string name="generate">generate</string>
+    <string name="noun">noun</string>
+    <string name="adjective">adjective</string>
+    <string name="verb">verb</string>
+    <string name="past_tense_verb">past tense verb</string>
+    <string name="adverb">adverb</string>
+    <string name="output">output</string>
+    <string name="first_name">first name</string>
+    <string name="first_name2">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="city">City</string>
+    <string name="school">School</string>
+    <string name="brother_s_name">Brother\'s Name</string>
+    <string name="sister_s_name">Sister\'s Name</string>
 </resources>
