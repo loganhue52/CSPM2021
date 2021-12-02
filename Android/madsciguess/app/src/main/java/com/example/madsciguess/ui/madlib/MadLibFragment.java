@@ -90,7 +90,7 @@ public class MadLibFragment extends Fragment {
                 "So I carried a tray of glasses full\n"+
                 "of %s into the dining room.",adj1,noun1,ptverb,verb1,noun2,noun2);
 
-        String madlib3 = String.format("I can believe it's already Halloween!\n"+
+        String madlib3 = String.format("I can't believe it's already Halloween!\n"+
                 "I put on my %s and visit every house\n"+
                 "in my neighborhood. Before I %s,\n"+
                 "I make sure to grab my %s %s\n"+

@@ -1,66 +1,98 @@
 package com.example.madsciguess.ui.guessinggame;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.SeekBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.madsciguess.MainActivity;
 import com.example.madsciguess.R;
+import java.util.Random;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link GuessGameFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class GuessGameFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    SeekBar input;
+    TextView pointTXT;
+    TextView livesTXT;
+//    EditText input;
+    public int points=0;
+    public int lives=5;
+    public int rnum = new Random().nextInt(100)+1;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public GuessGameFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment GuessGameFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static GuessGameFragment newInstance(String param1, String param2) {
-        GuessGameFragment fragment = new GuessGameFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        super.onCreateView(inflater,container,savedInstanceState);
+        View rootView = inflater.inflate(R.layout.fragment_guess_game,container,false);
+//        enterBTN=rootView.findViewById(R.id.enterBTN);
+        input=rootView.findViewById(R.id.input);
+        pointTXT=rootView.findViewById(R.id.pointTXT);
+        livesTXT=rootView.findViewById(R.id.livesTXT);
+        reset();
+        input.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int value=0;
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                value=i;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                guessCheck(value);
+            }
+        });
+        return rootView;
+    }
+    public void reset(){
+        points=0;
+        lives=5;
+        pointTXT.setText("Points: "+points);
+        livesTXT.setText("Lives: "+lives);
+        rnum = new Random().nextInt(100)+1;
+    }
+    private void guessCheck(int uIn){
+//        int uIn = Integer.parseInt(input.getText().toString());
+        if (uIn==rnum){
+            Toast.makeText(getActivity(), "Correct!", Toast.LENGTH_SHORT).show();
+            rnum = new Random().nextInt(100)+1;
+            points+=50;
+            points+=(lives*5);
+            lives=5;
+            pointTXT.setText("Points: "+points);
+            livesTXT.setText("Lives: "+lives);
+        } else{
+            lives-=1;
+            if (lives==0){
+                Toast.makeText(getActivity(), "You Lost! Correct # was "+rnum, Toast.LENGTH_SHORT).show();
+                reset();
+            } else{
+                livesTXT.setText("Lives: " + lives);
+                if (uIn<rnum) {
+                    Toast.makeText(getActivity(), "Incorrect! Go Higher!", Toast.LENGTH_SHORT).show();
+                } else if (uIn > rnum){
+                    Toast.makeText(getActivity(), "Incorrect! Go Lower!", Toast.LENGTH_SHORT).show();
+                }
+            }
+
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_guess_game, container, false);
-    }
 }

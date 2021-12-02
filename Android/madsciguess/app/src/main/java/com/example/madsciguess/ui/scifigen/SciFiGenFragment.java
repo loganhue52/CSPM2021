@@ -29,7 +29,7 @@ public class SciFiGenFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater,container,savedInstanceState);
-        View rootView = inflater.inflate(R.layout.fragment_mad_lib,container,false);
+        View rootView = inflater.inflate(R.layout.fragment_sci_fi_gen,container,false);
         firstTXT = rootView.findViewById(R.id.firstTXT);
         lastTXT = rootView.findViewById(R.id.lastTXT);
         cityTXT = rootView.findViewById(R.id.cityTXT);
