@@ -19,7 +19,7 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_activity);
         closeBTN = findViewById(R.id.closeBTN);
-        secondLBL = findViewById(R.id.secondLBL);
+//        secondLBL = findViewById(R.id.secondLBL);
 //        secondUI = findViewById(R.id.secondUI);
 
 //        String valueOfIntent = getIntent().getStringExtra("input");
