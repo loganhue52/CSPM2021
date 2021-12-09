@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class ChilliActivity extends AppCompatActivity {
+public class SandwichActivity extends AppCompatActivity {
     //Side Button
     private Button iceCreamBTN;
     private Button comboBTN;
@@ -20,10 +22,31 @@ public class ChilliActivity extends AppCompatActivity {
     private Button checkoutBTN;
 
     // Order Buttons
-    private Button oneBTN;
-    private Button twoBTN;
-    private Button threeBTN;
-    private Button fourBTN;
+    private Button cBurgerBTN;
+    private CheckBox checkBoxCBurgerT;
+    private CheckBox checkBoxCBurgerL;
+    private CheckBox checkBoxCBurgerO;
+    private CheckBox checkBoxCBurgerC;
+    private CheckBox checkBoxCBurgerP;
+    private Button dRitzBTN;
+    private CheckBox checkBoxDRitzT;
+    private CheckBox checkBoxDRitzL;
+    private CheckBox checkBoxDRitzP;
+    private CheckBox checkBoxDRitzC;
+    private CheckBox checkBoxDRitzO;
+    private Button fSandwichBTN;
+    private CheckBox checkBoxFSandwichT;
+    private CheckBox checkBoxFSandwichL;
+    private CheckBox checkBoxFSandwichP;
+    private CheckBox checkBoxFSandwichO;
+    private CheckBox checkBoxFSandwichC;
+    private Button cGrillBTN;
+    private CheckBox checkBoxCGrillT;
+    private CheckBox checkBoxCGrillL;
+    private CheckBox checkBoxCGrillP;
+    private CheckBox checkBoxCGrillO;
+    private CheckBox checkBoxCGrillC;
+    private Button pBjBTN;
 
     public String order;
     public double total;
@@ -31,7 +54,7 @@ public class ChilliActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.chilli_activity);
+        setContentView(R.layout.sandwiches_activity);
 
         order=getIntent().getStringExtra("order");
         total=Double.parseDouble(getIntent().getStringExtra("total"));
@@ -47,17 +70,18 @@ public class ChilliActivity extends AppCompatActivity {
         checkoutBTN = findViewById(R.id.checkOutBTN);
 
         // Order Button
-        oneBTN = findViewById(R.id.oneBTN);
-        twoBTN = findViewById(R.id.twoBTN);
-        threeBTN = findViewById(R.id.threeBTN);
-        fourBTN = findViewById(R.id.fourBTN);
+        cBurgerBTN = findViewById(R.id.cBurgerBTN);
+        dRitzBTN = findViewById(R.id.dRitzBTN);
+        fSandwichBTN = findViewById(R.id.fSandwichBTN);
+        cGrillBTN = findViewById(R.id.cGrillBTN);
+        pBjBTN = findViewById(R.id.pBjBTN);
 
 
         //Side buttons
         iceCreamBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(ChilliActivity.this,IceCreamActivity.class);
+                Intent i = new Intent(SandwichActivity.this,IceCreamActivity.class);
                 i.putExtra("order",order);
                 i.putExtra("total",Double.toString(total));
                 startActivity(i);
@@ -66,7 +90,7 @@ public class ChilliActivity extends AppCompatActivity {
         comboBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(ChilliActivity.this,ComboActivity.class);
+                Intent i = new Intent(SandwichActivity.this,ComboActivity.class);
                 i.putExtra("order",order);
                 i.putExtra("total",Double.toString(total));
                 startActivity(i);
@@ -75,16 +99,13 @@ public class ChilliActivity extends AppCompatActivity {
         sandwichBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(ChilliActivity.this,SandwichActivity.class);
-                i.putExtra("order",order);
-                i.putExtra("total",Double.toString(total));
-                startActivity(i);
+                Toast.makeText(getApplicationContext(), "You're already on the Sandwich Menu!", Toast.LENGTH_SHORT).show();
             }
         });
         hotDogsBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(ChilliActivity.this,HotDogsActivity.class);
+                Intent i = new Intent(SandwichActivity.this,HotDogsActivity.class);
                 i.putExtra("order",order);
                 i.putExtra("total",Double.toString(total));
                 startActivity(i);
@@ -93,15 +114,16 @@ public class ChilliActivity extends AppCompatActivity {
         chiliBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent i = new Intent(SandwichActivity.this,ChiliActivity.class);
-//                startActivity(i);
-                Toast.makeText(getApplicationContext(), "You're already on the Chili Menu!", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(SandwichActivity.this,ChilliActivity.class);
+                i.putExtra("order",order);
+                i.putExtra("total",Double.toString(total));
+                startActivity(i);
             }
         });
         specialBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(ChilliActivity.this,SpecialActivity.class);
+                Intent i = new Intent(SandwichActivity.this,SpecialActivity.class);
                 i.putExtra("order",order);
                 i.putExtra("total",Double.toString(total));
                 startActivity(i);
@@ -110,7 +132,7 @@ public class ChilliActivity extends AppCompatActivity {
         saladBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(ChilliActivity.this,SaladActivity.class);
+                Intent i = new Intent(SandwichActivity.this,SaladActivity.class);
                 i.putExtra("order",order);
                 i.putExtra("total",Double.toString(total));
                 startActivity(i);
@@ -119,7 +141,7 @@ public class ChilliActivity extends AppCompatActivity {
         checkoutBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(ChilliActivity.this,CheckoutActivity.class);
+                Intent i = new Intent(SandwichActivity.this,CheckoutActivity.class);
                 i.putExtra("order",order);
                 i.putExtra("total",Double.toString(total));
                 startActivity(i);
@@ -127,34 +149,41 @@ public class ChilliActivity extends AppCompatActivity {
         });
 
         // Order Button
-        oneBTN.setOnClickListener(new View.OnClickListener() {
+        cBurgerBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                order=order+"3-Way Chili\t\t\t\t$3.00\n";
-                total+=3;
+                order=order+"Hamburger\t\t\t\t$4.00\n";
+                total+=4;
+            }
+
+        });
+        dRitzBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                order=order+"Double Ritz\t\t\t\t$5.50\n";
+                total+=5.5;
             }
         });
-        twoBTN.setOnClickListener(new View.OnClickListener() {
+        fSandwichBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                order=order+"4-Way Chili\t\t\t\t$4.00\n";
+                order=order+"Fish Sandwich\t\t\t\t$4.00\n";
                 total+=4;
             }
         });
-        threeBTN.setOnClickListener(new View.OnClickListener() {
+        cGrillBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                order=order+"5-Way Chili\t\t\t\t$5.00\n";
+                order=order+"Chicken Grill\t\t\t\t$6.00\n";
+                total+=6;
+            }
+        });
+        pBjBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                order=order+"World's Best PB&J\t\t\t\t$5.00\n";
                 total+=5;
             }
         });
-        fourBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                order=order+"7-Way Chili\t\t\t\t$7.00\n";
-                total+=7;
-            }
-        });
-
     }
 }

@@ -10,25 +10,27 @@
         android:id="@+id/openBTN"
         android:layout_width="381dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="32dp"
-        android:text="Go to menu"
+        android:layout_marginBottom="328dp"
+        android:text="Begin Order"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/welcomeText"
-        android:layout_width="509dp"
-        android:layout_height="459dp"
+        android:layout_width="640dp"
+        android:layout_height="144dp"
         android:layout_marginBottom="32dp"
-        android:text="Welcome to the GD Ritzy's Self Serve Kiosk! This is the welcome screen."
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Welcome to the GD Ritzy's Self-Serve Kiosk! Press the button below to begin."
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toTopOf="@+id/openBTN"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.973" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -53,5 +55,18 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="723dp"
+        android:layout_height="272dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/openBTN"
+        app:layout_constraintVertical_bias="0.666"
+        app:srcCompat="@drawable/fastfood" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

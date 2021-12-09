@@ -21,6 +21,11 @@
         <activity android:name=".CheckoutActivity"/>
         <activity android:name=".ChilliActivity"/>
         <activity android:name=".ComboActivity"/>
+        <activity android:name=".SandwichActivity"/>
+        <activity android:name=".SaladActivity"/>
+        <activity android:name=".IceCreamActivity"/>
+        <activity android:name=".HotDogsActivity"/>
+        <activity android:name=".SpecialActivity"/>
     </application>
 
 </manifest>

@@ -27,11 +27,18 @@ public class ComboActivity extends AppCompatActivity {
     private Button fiveBTN;
     private Button sixBTN;
     private Button sevenBTN;
+    public String order;
+    public double total;
+
+//    public String order=getIntent().getStringExtra("order");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.combo_activity);
+        order=getIntent().getStringExtra("order");
+        total=Double.parseDouble(getIntent().getStringExtra("total"));
+
 
         //Side Button
         iceCreamBTN = findViewById(R.id.iceCreamBTN);
@@ -57,8 +64,10 @@ public class ComboActivity extends AppCompatActivity {
         iceCreamBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent i = new Intent(SandwichActivity.this,IceCreamActivity.class);
-                //startActivity(i);
+                Intent i = new Intent(ComboActivity.this,IceCreamActivity.class);
+                i.putExtra("order",order);
+                i.putExtra("total",Double.toString(total));
+                startActivity(i);
             }
         });
         comboBTN.setOnClickListener(new View.OnClickListener() {
@@ -72,42 +81,54 @@ public class ComboActivity extends AppCompatActivity {
         sandwichBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent i = new Intent(SandwichActivity.this,SandwichActivity.class);
-//                startActivity(i);
+                Intent i = new Intent(ComboActivity.this,SandwichActivity.class);
+                i.putExtra("order",order);
+                i.putExtra("total",Double.toString(total));
+                startActivity(i);
             }
         });
         hotDogsBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent i = new Intent(SandwichActivity.this,HotDogsActivity.class);
-                //startActivity(i);
+                Intent i = new Intent(ComboActivity.this,HotDogsActivity.class);
+                i.putExtra("order",order);
+                i.putExtra("total",Double.toString(total));
+                startActivity(i);
             }
         });
         chiliBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(ComboActivity.this,ChilliActivity.class);
+                i.putExtra("order",order);
+                i.putExtra("total",Double.toString(total));
                 startActivity(i);
             }
         });
         specialBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent i = new Intent(SandwichActivity.this,SpecialActivity.class);
-                //startActivity(i);
+                Intent i = new Intent(ComboActivity.this,SpecialActivity.class);
+                i.putExtra("order",order);
+                i.putExtra("total",Double.toString(total));
+                startActivity(i);
             }
         });
         saladBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent i = new Intent(SandwichActivity.this,SaladActivity.class);
-//                startActivity(i);
+                Intent i = new Intent(ComboActivity.this,SaladActivity.class);
+                i.putExtra("order",order);
+                i.putExtra("total",Double.toString(total));
+                startActivity(i);
             }
         });
         checkoutBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(ComboActivity.this,CheckoutActivity.class);
+                i.putExtra("order",order);
+                i.putExtra("total",Double.toString(total));
                 startActivity(i);
             }
         });
@@ -116,43 +137,50 @@ public class ComboActivity extends AppCompatActivity {
         oneBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                order=order+"Combo #1\t\t\t\t$7.00\n";
+                total+=7;
             }
         });
         twoBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                order=order+"Combo #2\t\t\t\t$7.00\n";
+                total+=7;
             }
         });
         threeBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                order=order+"Combo #3\t\t\t\t$7.00\n";
+                total+=7;
             }
         });
         fourBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                order=order+"Combo #4\t\t\t\t$7.00\n";
+                total+=7;
             }
         });
         fiveBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                order=order+"Ritz Combo Basket\t\t\t\t$9.00\n";
+                total+=9;
             }
         });
         sixBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                order=order+"Cool Deal\t\t\t\t$8.00\n";
+                total+=8;
             }
         });
         sevenBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                order=order+"Itzy Ritzy\t\t\t\t$6.00\n";
+                total+=6;
             }
         });
     }

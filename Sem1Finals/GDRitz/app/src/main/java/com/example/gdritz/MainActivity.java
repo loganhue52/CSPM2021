@@ -11,6 +11,8 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
     private Button openBTN;
 //    private EditText firstUI;
+    public String order="";
+    public double total=0.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
 //                String ui = String.valueOf(firstUI.getText());
                 Intent i = new Intent(MainActivity.this,ComboActivity.class);
 //                i.putExtra("input",ui);
+                i.putExtra("order",order);
+                i.putExtra("total",Double.toString(total));
                 startActivity(i);
             }
         });

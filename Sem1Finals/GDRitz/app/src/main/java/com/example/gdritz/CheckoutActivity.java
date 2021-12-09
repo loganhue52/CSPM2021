@@ -10,7 +10,8 @@ import android.widget.TextView;
 
 public class CheckoutActivity extends AppCompatActivity {
     private Button thirdBTN;
-    private TextView thirdLBL1;
+    private TextView orderLBL;
+    private TextView totalLBL;
 //    private TextView thirdLBL2;
 
     @Override
@@ -18,12 +19,15 @@ public class CheckoutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.checkout_activity);
         thirdBTN = findViewById(R.id.thirdBTN);
-        thirdLBL1 = findViewById(R.id.thirdLBL1);
+        orderLBL = findViewById(R.id.orderLBL);
+        totalLBL = findViewById(R.id.totalLBL);
 //        thirdLBL2 = findViewById(R.id.thirdLBL2);
 
-//        String valueOfIntent1 = getIntent().getStringExtra("input");
+        String order = getIntent().getStringExtra("order");
+        double total = Double.parseDouble(getIntent().getStringExtra("total"));
 //        String valueOfIntent2 = getIntent().getStringExtra("input2");
-//        thirdLBL1.setText(valueOfIntent1);
+        orderLBL.setText(order);
+        totalLBL.setText("$"+Double.toString(total));
 //        thirdLBL2.setText(valueOfIntent2);
 
         thirdBTN.setOnClickListener(new View.OnClickListener() {
