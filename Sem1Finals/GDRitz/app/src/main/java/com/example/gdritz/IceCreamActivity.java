@@ -212,6 +212,7 @@ public class IceCreamActivity extends AppCompatActivity {
 
     }
     public void addSizeToCart(String type){
+        double price = 0;
         Log.d("RadioButton Test", "triggered");
         int selectedId = sizeRG.getCheckedRadioButtonId();
         if (selectedId == -1) {
@@ -222,10 +223,13 @@ public class IceCreamActivity extends AppCompatActivity {
             Toast.makeText(IceCreamActivity.this, radioButton.getText(), Toast.LENGTH_SHORT).show();
             if (radioButton.getText().equals("Single Scoop/Small")) {
                 total += 5;
+                price=5.00;
             } else if (radioButton.getText().equals("Double Scoop/Medium")) {
                 total += 6;
+                price=6.00;
             } else {
                 total += 7;
+                price=7.00;
             }
             if(vanillaCB.isChecked()){
                 order+= "Vanilla "+radioButton.getText()+type;

@@ -1,0 +1,11 @@
+com/example/gdritz/BuildConfig.java
+ com.example.gdritz.BuildConfig
+com/example/gdritz/MenuActivity.java
+ com.example.gdritz.MenuActivity
+ com.example.gdritz.MenuActivity$1
+com/example/gdritz/MainActivity.java
+ com.example.gdritz.MainActivity
+ com.example.gdritz.MainActivity$1
+com/example/gdritz/CheckoutActivity.java
+ com.example.gdritz.CheckoutActivity
+ com.example.gdritz.CheckoutActivity$1
