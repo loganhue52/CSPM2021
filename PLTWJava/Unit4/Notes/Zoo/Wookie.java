@@ -1,9 +1,8 @@
-
-public class BrownBear extends Bear implements Walking{
-    public BrownBear(){
+public class Wookie extends SpaceAnimal implements Walking{
+    public Wookie(){
         super("BrownBare","Brown");
     }
-    public BrownBear(String name,String desc){
+    public Wookie(String name,String desc){
         super(name,desc);
     }
     public String walk(){

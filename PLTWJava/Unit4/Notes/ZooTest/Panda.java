@@ -1,12 +1,10 @@
 
-public class Panda extends Bear implements Walking{
+public class Panda extends Bear{
     public Panda(){
         super("Pandie","He stank");
     }
     public Panda(String name,String desc){
         super(name,desc);
     }
-    public String walk(){
-        return "he walk";
-    }
+    
 }

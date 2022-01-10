@@ -1,5 +1,5 @@
 
-public class Black extends Bird {
+public class Black extends Animal {
     public Black(){
         super("Black","boom");
     }

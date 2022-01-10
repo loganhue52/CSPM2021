@@ -1,5 +1,5 @@
 
-public class TrashPanda extends Bear implements Swimming,Walking{
+public class TrashPanda extends Bear implements Swimming{
     public TrashPanda(){
         super("TrashPandie","He very very stank");
     }
@@ -8,8 +8,5 @@ public class TrashPanda extends Bear implements Swimming,Walking{
     }
     public String swim(){
         return "the racoon kinda swims? looks like more of a flail";
-    }
-    public String walk(){
-        return "he walk";
     }
 }

@@ -1,5 +1,5 @@
 
-public class Blue extends Bird implements Flying,Walking,Swimming{
+public class Blue extends Animal implements Flying,Walking,Swimming{
     public Blue(){
         super("Blue","splits");
     }

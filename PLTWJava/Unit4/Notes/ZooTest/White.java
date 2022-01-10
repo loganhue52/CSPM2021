@@ -1,5 +1,5 @@
 
-public class White extends Bird {
+public class White extends Animal {
     public White(){
         super("White","craps an egg");
     }
