@@ -13,4 +13,5 @@ public abstract class Animal{
     public String getDesc(){
         return desc;
     }
+    public abstract String makeNoise();
 }

@@ -9,7 +9,8 @@ public class TrashPanda extends Bear implements Swimming,Walking{
     public String swim(){
         return "the racoon kinda swims? looks like more of a flail";
     }
+    @Override
     public String walk(){
-        return "he walk";
+        return "hes on two legs!";
     }
 }

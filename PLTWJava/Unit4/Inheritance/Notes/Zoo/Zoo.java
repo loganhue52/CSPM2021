@@ -33,6 +33,9 @@ public class Zoo
                 case "visit cages" : 
                 msg = visitCages(animals);
                 break;
+                case "listen":
+                msg = listen(animals);
+                break;
                 case "look down":
                 msg = lookDown(animals);
                 break;
@@ -42,6 +45,9 @@ public class Zoo
                 case "look around":
                 msg = lookAround(animals);
                 break;
+                case "show bears":
+                msg = seeTheBears(animals);
+                break;
                 default : msg = "You flail helplessly with indecision.";
             }
             System.out.println("\n" + msg);
@@ -50,6 +56,23 @@ public class Zoo
             text = in.nextLine();
         }
         System.out.println(Math.random() < .5 ? "\nHave a nice day!  Hope you come back!" : "\nAn escaped lion eats you on your way out.  Sorry!");
+    }
+    public static String seeTheBears(List<Animal> animals){
+        String msg="";
+        for (Animal a: animals){
+            if (a instanceof Bear){
+                Bear f = (Bear) a;
+                msg += a.getName() + ": \n\t" + f.walk()+"\n";
+            }
+        }
+        return msg;
+    }
+    public static String listen(List<Animal> animals){
+        String msg="";
+        for (Animal a: animals){
+            msg+=a.getName()+": "+a.makeNoise()+"\n";
+        }
+        return msg;
     }
     public static String lookDown(List<Animal> animals){
         String msg="";

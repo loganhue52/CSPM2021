@@ -6,5 +6,8 @@ public class Black extends Bird {
     public Black(String name,String desc){
         super(name,desc);
     }
-    
+    @Override
+    public String makeNoise(){
+        return "boom";
+    }
 }

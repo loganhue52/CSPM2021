@@ -6,6 +6,7 @@ public class Panda extends Bear implements Walking{
     public Panda(String name,String desc){
         super(name,desc);
     }
+    @Override
     public String walk(){
         return "he walk";
     }

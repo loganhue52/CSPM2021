@@ -6,5 +6,8 @@ public class Bird extends Animal {
     public Bird(String name,String desc){
         super(name,desc);
     }
-    
+    @Override
+    public String makeNoise(){
+        return "ka kawwww";
+    }
 }

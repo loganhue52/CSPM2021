@@ -6,7 +6,9 @@ public class BrownBear extends Bear implements Walking{
     public BrownBear(String name,String desc){
         super(name,desc);
     }
+    @Override
     public String walk(){
-        return "he walk";
+        return "smokey is inspecting for forest fires";
     }
+
 }
