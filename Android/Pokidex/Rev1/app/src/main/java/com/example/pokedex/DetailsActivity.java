@@ -15,6 +15,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 public class DetailsActivity extends AppCompatActivity {
     private TextView nameTextView;
@@ -23,6 +24,8 @@ public class DetailsActivity extends AppCompatActivity {
     private TextView t1TextView;
     private TextView t2TextView;
     private RequestQueue requestQueue;
+    private TextView movesTextView;
+    public String moveString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,7 @@ public class DetailsActivity extends AppCompatActivity {
         urlTextView = findViewById(R.id.pokemonURL);
         t1TextView = findViewById(R.id.pokemonT1);
         t2TextView = findViewById(R.id.pokemonT2);
+        movesTextView = findViewById(R.id.movesTextView);
         requestQueue = Volley.newRequestQueue(getApplicationContext());
 
         load(url);
@@ -72,6 +76,13 @@ public class DetailsActivity extends AppCompatActivity {
                         }
                     }
 
+                    JSONArray moveEntries = response.getJSONArray("moves");
+                    for (int i=0;i<moveEntries.length();i++){
+                        JSONObject moveEntry = moveEntries.getJSONObject(i);
+                        String move = moveEntry.getJSONObject("move").getString("name");
+                        moveString+=(move+"\n");
+                    }
+
                     String name = response.getString("name");
 
                     String number = response.getString("id");
@@ -79,6 +90,7 @@ public class DetailsActivity extends AppCompatActivity {
                     nameTextView.setText("Pokemon name: "+name);
                     numberTextView.setText("Pokemon number: "+number);
                     urlTextView.setText("URL: "+url);
+                    movesTextView.setText(moveString);
 
                 }catch(JSONException e){
                     Log.e("Details getTypeEntries","Json error",e);
