@@ -19,9 +19,16 @@ import java.util.List;
 public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexViewHolder>{
 
     private List<Pokemon> thePokemonList = Arrays.asList(
-            new Pokemon("Bulbasaur",1),
-            new Pokemon("Ivysaur",2),
-            new Pokemon("Venusaur",3)
+            new Pokemon("Charizard",5,"fire"),
+            new Pokemon("Weedle",12,"bug"),
+            new Pokemon("Raichu",25,"electric"),
+            new Pokemon("Clefairy",34,"fairy"),
+            new Pokemon("Ninetales",37,"fire"),
+            new Pokemon("Wigglytuff",39,"normal"),
+            new Pokemon("Gloom",43,"grass"),
+            new Pokemon("Slowbro",79,"water"),
+            new Pokemon("Krabby",97,"water"),
+            new Pokemon("Mewtwo",149,"psychic")
     );
 
     //Class that populates and builds each individual card
@@ -45,6 +52,7 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexV
                     //'key','value'
                     intent.putExtra("name",pokemonThatWeClickedOn.getName());
                     intent.putExtra("number",pokemonThatWeClickedOn.getNumber());
+                    intent.putExtra("type",pokemonThatWeClickedOn.getType());
                     view.getContext().startActivity(intent);
                 }
             });
