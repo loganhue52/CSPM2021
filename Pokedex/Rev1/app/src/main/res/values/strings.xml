@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Pokedex</string>
+    <string name="pokemon_name">Pokemon Name</string>
+    <string name="pokemon_number">Pokemon Number</string>
+    <string name="pokemon_url">Pokemon URL</string>
+    <string name="type_1">Type 1</string>
+    <string name="type_2">Type 2</string>
+    <string name="moves">Moves</string>
+    <string name="preference_file_key">saveCatch</string>
+    <bool name="preference_default">true</bool>
+
+</resources>
