@@ -1,5 +1,4 @@
 import java.util.Random;
-import java.sql.Array;
 
 /**
  * Project 3.6.5
@@ -8,7 +7,7 @@ import java.sql.Array;
  * After wathcing the memory strings appear in the buttons one at a time, the
  * player recreates the sequence from memory.
  */
-public class MemoryGame
+public class MemoryGameChallenge
 {
   public static void main(String[] args) {
 
@@ -16,14 +15,17 @@ public class MemoryGame
     // show in the buttons, one element at a time. This is the sequence
     // the player will have to remember.
     String[] alphabet = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
+    String[] digits = {"1","2","3","4","5","6","7","8","9","0"};
     int score=0;
     int rounds=0;
+    int misses=0;
+    int length=5; //max: 26 - adjustable length for board and amount of digits/letters
 
     // Create the game and gameboard. Configure a randomized board with 3 buttons.
     // (Later, you can change options to configure more or less buttons
     // and turn randomization on or off.)
     MemoryGameGUI gui = new MemoryGameGUI();
-    gui.createBoard(3, true);
+    gui.createBoard(length, true);
 
 
     // Play the game until user wants to quit.
@@ -37,14 +39,22 @@ public class MemoryGame
         // - OR -
         // Overload the next method in RandomPermutation to create a random sequence 
         // of the memory strings, passed as a parameter.
-        int[] randomInts = RandomPermutation.next(alphabet.length-1);
+        int[] randomIntsLetters = RandomPermutation.next(alphabet.length-1);
+        int[] randomIntsDigits = RandomPermutation.next(digits.length-1);
+
+        Random rand = new Random();
     
-        String randomLettersStr = "";
-        int length=3; //max: 26 - adjustable length
+        String seqStr = "";
+         
         for (int i=0;i<length;i++){
-            randomLettersStr+=alphabet[randomInts[i]];
+            int digitChance=rand.nextInt(20);
+            if(digitChance<=10){
+                seqStr+=alphabet[randomIntsLetters[i]];
+            }else{
+                seqStr+=digits[randomIntsDigits[i]];
+            }
         }
-        String[] randomLettersArray = randomLettersStr.split("");
+        String[] seqArray = seqStr.split("");
 
         // System.out.print("Rand: "+randomLettersStr);
 
@@ -52,7 +62,7 @@ public class MemoryGame
         // Play one sequence, delaying half a second for the strings to show
         // in the buttons. Save the player's guess. 
         // (Later, you can speed up or slow down the game.)
-        String seq = gui.playSequence(randomLettersArray, 0.5);
+        String seq = gui.playSequence(seqArray, 0.5);
 
       // Determine if player's guess matches all elements of the random sequence.
       
@@ -65,7 +75,7 @@ public class MemoryGame
         // System.out.println("seq: "+seq);
 
         try{
-            if(seq.equals(randomLettersStr)){
+            if(seq.equals(seqStr)){
                 score+=1;
                 rounds+=1;
                 gui.matched();
@@ -74,11 +84,17 @@ public class MemoryGame
                     gui.quit();
                 }
             }else{
-                gui.tryAgain();
+                misses+=1;
                 rounds+=1;
-                if(!(gui.playAgain())){
+                if(misses==3){
                     gui.showScore(score, rounds);
                     gui.quit();
+                }else{
+                    gui.tryAgain();
+                    if(!(gui.playAgain())){
+                        gui.showScore(score, rounds);
+                        gui.quit();
+                    }
                 }
             }
         }catch(Exception e){
