@@ -3,7 +3,7 @@ const fs = require("fs");
 const mysql = require("mysql");
 const fastcsv = require("fast-csv");
 
-let stream = fs.createReadStream("accountsData.csv");
+let stream = fs.createReadStream("usersData.csv");
 
 let csvData = [];
 
@@ -12,7 +12,7 @@ let csvStream = fastcsv.parse().on("data", function(data) {
 });
 
 csvStream.on("end", function() {
-    csvData.shift();
+    // csvData.shift();
     // create a new connection to the database
     const connection = mysql.createConnection({
         host: "localhost",
@@ -27,7 +27,7 @@ csvStream.on("end", function() {
         console.error(error);
       } else {
         let query =
-          "INSERT INTO Accounts (Name,Address,City,Zip,Phone) VALUES ?";
+          "INSERT INTO Users (AccountId,Email,LastName,FirstName,Password) VALUES ?";
         connection.query(query, [csvData], (error, response) => {
           console.log(error || response);
         });
