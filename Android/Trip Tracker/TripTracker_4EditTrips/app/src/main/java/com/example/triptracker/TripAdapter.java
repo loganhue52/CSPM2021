@@ -45,7 +45,8 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder
                 for(DataSnapshot ds: snapshot.getChildren()){
                     String name = ds.child("name").getValue(String.class);
                     String desc = ds.child("desc").getValue(String.class);
-                    Trip t = new Trip(name,desc);
+                    String id = ds.child("objectId").getValue(String.class);
+                    Trip t = new Trip(id,name,desc);
                     listOfTrips.add(t);
                     Log.d("Pull",t.toString());
                 }
@@ -95,7 +96,8 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder
                     Trip current = (Trip) containerView.getTag();
                     Intent i = new Intent(view.getContext(),TripActivity.class);
                     i.putExtra("name",current.getName());
-                    i.putExtra("description",current.getDesc());
+                    i.putExtra("desc",current.getDesc());
+                    i.putExtra("id",current.getObjectId());
                     view.getContext().startActivity(i);
                 }
             });
