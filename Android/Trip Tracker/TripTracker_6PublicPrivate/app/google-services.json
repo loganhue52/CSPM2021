@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "629421162196",
+    "project_id": "triptracker2022-c5428",
+    "storage_bucket": "triptracker2022-c5428.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629421162196:android:d75043cceb777448c7c541",
+        "android_client_info": {
+          "package_name": "com.example.triptracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "629421162196-4ualhnt0m17bft9osn5f0mh2rvl3k9mq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCazCacWThhGHbE-OIphSFTWgezJ5PNW-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "629421162196-4ualhnt0m17bft9osn5f0mh2rvl3k9mq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

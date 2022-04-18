@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/padawan/Documents/CSPM2021/Android/Trip Tracker/TripTracker_2AddTrip/app/src/main/res/layout/activity_stream.xml" value="0.2504528985507246" />
+        <entry key="..\:/Users/padawan/Documents/CSPM2021/Android/Trip Tracker/TripTracker_2AddTrip/app/src/main/res/layout/activity_trip.xml" value="0.2504528985507246" />
+        <entry key="..\:/Users/padawan/Documents/CSPM2021/Android/Trip Tracker/TripTracker_2AddTrip/app/src/main/res/menu/menu_trip_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/padawan/Documents/CSPM2021/Android/Trip Tracker/TripTracker_2AddTrip/app/src/main/res/menu/menu_trip_list_item_context.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/padawan/Documents/CSPM2021/Android/Trip Tracker/TripTracker_2AddTrip/app/src/main/res/menu/menu_trips.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/padawan/Documents/CSPM2021/Android/Trip Tracker/TripTracker_3PullTrips/app/src/main/res/layout/activity_stream.xml" value="0.23731884057971014" />
+        <entry key="..\:/Users/padawan/Documents/CSPM2021/Android/Trip Tracker/TripTracker_3PullTrips/app/src/main/res/layout/trip_card.xml" value="0.4" />
+        <entry key="..\:/Users/padawan/Documents/CSPM2021/Android/Trip Tracker/TripTracker_4EditTrips/app/src/main/res/layout/activity_trip.xml" value="0.22282608695652173" />
+        <entry key="..\:/Users/padawan/Documents/CSPM2021/Android/Trip Tracker/TripTracker_5Delete/app/src/main/res/layout/trip_card.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/padawan/Documents/CSPM2021/Android/Trip Tracker/TripTracker_6PublicPrivate/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/padawan/Documents/CSPM2021/Android/Trip Tracker/TripTracker_6PublicPrivate/app/src/main/res/layout/activity_stream.xml" value="0.10729166666666666" />
+        <entry key="..\:/Users/padawan/Documents/CSPM2021/Android/Trip Tracker/TripTracker_6PublicPrivate/app/src/main/res/layout/activity_trip.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/padawan/Documents/CSPM2021/Android/Trip Tracker/TripTracker_6PublicPrivate/app/src/main/res/menu/menu_trips.xml" value="0.4" />
+        <entry key="..\:/Users/padawan/Documents/CSPM2021/Android/Trip Tracker/TripTracker_rev1/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/padawan/Documents/CSPM2021/Android/TripTracker/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/padawan/Documents/CSPM2021/Android/TripTracker/app/src/main/res/layout/activity_stream.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
