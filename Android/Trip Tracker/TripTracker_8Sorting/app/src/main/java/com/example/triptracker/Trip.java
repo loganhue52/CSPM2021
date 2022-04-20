@@ -90,6 +90,10 @@ public class Trip implements IntentData{
                 ", UID='" + UID + '\'' +
                 '}';
     }
+
+    public int compareTo(Object o){
+        return name.compareTo(((Trip) o).name);
+    }
 }
 
 

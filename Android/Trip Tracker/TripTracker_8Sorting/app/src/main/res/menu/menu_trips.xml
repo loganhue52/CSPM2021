@@ -29,6 +29,14 @@
         android:id="@+id/action_my_trips"
         android:title="@string/action_my_trips">
     </item>
+    <item
+        android:id="@+id/action_ascending_order"
+        android:title="@string/ascending">
+    </item>
+    <item
+        android:id="@+id/action_descending_order"
+        android:title="@string/descending">
+    </item>
 
     <item
         android:id="@+id/action_logout"

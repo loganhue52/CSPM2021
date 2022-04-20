@@ -51,4 +51,6 @@
     <string name="delete_error_title">Permission Denied!</string>
     <string name="post_error_title">Permission Denied!</string>
     <string name="filter_name">Search</string>
+    <string name="ascending">Ascending</string>
+    <string name="descending">Descending</string>
 </resources>

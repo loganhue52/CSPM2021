@@ -91,6 +91,10 @@ public class StreamActivity extends AppCompatActivity {
             case R.id.action_search:
                 Log.d("action_search: ","clicked");
                 return true;
+            case R.id.action_ascending_order:
+                return true;
+            case R.id.action_descending_order:
+                return true;
         }
 
         return super.onOptionsItemSelected(item);

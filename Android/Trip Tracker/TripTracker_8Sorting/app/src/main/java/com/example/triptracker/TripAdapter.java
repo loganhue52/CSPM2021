@@ -85,11 +85,14 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder
     @Override
     public TripAdapter.TripViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.trip_card,parent,false);
+
         return new TripViewHolder(v);
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull TripAdapter.TripViewHolder holder, int position) {
+        ArrayListSorter.insertionSort(listOfTrips,"ASC");
         Trip current = listOfTrips.get(position);
         holder.name.setText(current.getName());
         holder.desc.setText(current.getDesc());
