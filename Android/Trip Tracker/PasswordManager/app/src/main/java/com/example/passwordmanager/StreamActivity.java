@@ -1,4 +1,4 @@
-package com.example.triptracker;
+package com.example.passwordmanager;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -92,13 +92,8 @@ public class StreamActivity extends AppCompatActivity {
                 Log.d("action_search: ","clicked");
                 return true;
             case R.id.action_ascending_order:
-//                TripAdapter.order = "ASC";
-
-                refreshStream();
                 return true;
             case R.id.action_descending_order:
-                TripAdapter.order = "DSC";
-                refreshStream();
                 return true;
         }
 

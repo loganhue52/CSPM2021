@@ -1,4 +1,4 @@
-package com.example.triptracker;
+package com.example.passwordmanager;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,10 +7,8 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -26,7 +24,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder> {
 
@@ -35,7 +32,6 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder
     private boolean publicTripView = Boolean.valueOf(StreamActivity.mPublicView);
     private String currentUID = FirebaseAuth.getInstance().getUid();
     private String tripId;
-    public static String order = "ASC";
 //    private String UID = FirebaseAuth.getInstance().getUid();
 
     public TripAdapter(Context context){
@@ -93,8 +89,7 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull TripAdapter.TripViewHolder holder, int position) {
-//        ArrayListSorter.insertionSort(listOfTrips,order);
-        ArrayListSearcher.search(listOfTrips,"2");
+        ArrayListSorter.insertionSort(listOfTrips,"ASC");
         Trip current = listOfTrips.get(position);
         holder.name.setText(current.getName());
         holder.desc.setText(current.getDesc());
