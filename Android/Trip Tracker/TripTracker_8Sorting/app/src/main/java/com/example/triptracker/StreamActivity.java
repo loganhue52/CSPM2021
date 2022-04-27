@@ -89,11 +89,10 @@ public class StreamActivity extends AppCompatActivity {
                 refreshStream();
                 return true;
             case R.id.action_search:
-                Log.d("action_search: ","clicked");
+//                TripAdapter.searchInput
                 return true;
             case R.id.action_ascending_order:
-//                TripAdapter.order = "ASC";
-
+                TripAdapter.order = "ASC";
                 refreshStream();
                 return true;
             case R.id.action_descending_order:

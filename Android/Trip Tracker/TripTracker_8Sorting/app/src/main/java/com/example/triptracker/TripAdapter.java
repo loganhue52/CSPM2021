@@ -31,11 +31,13 @@ import java.util.stream.Stream;
 public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder> {
 
     private List<Trip> listOfTrips = new ArrayList<>();
+    public List<Trip> filteredList = listOfTrips;
     private DatabaseReference rootRef;
     private boolean publicTripView = Boolean.valueOf(StreamActivity.mPublicView);
     private String currentUID = FirebaseAuth.getInstance().getUid();
     private String tripId;
     public static String order = "ASC";
+    public static String searchTerm;
 //    private String UID = FirebaseAuth.getInstance().getUid();
 
     public TripAdapter(Context context){
@@ -59,14 +61,15 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder
                     boolean shared=ds.child("shared").getValue(Boolean.class);
                     String UID = ds.child("uid").getValue(String.class);
                     Trip t = new Trip(id,name,desc,shared,UID);
+                    listOfTrips.add(t);
                     //public
                     if(publicTripView){
                         if (shared) {
-                            listOfTrips.add(t);
+                            filteredList.add(t);
                         }
                     }else{ //private
                         if ((!shared) && (t.getUID().equals(currentUID))) {
-                            listOfTrips.add(t);
+                            filteredList.add(t);
                         }
                     }
 //                    listOfTrips.add(t);
@@ -91,11 +94,17 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder
 
     }
 
+//    @Override
+    public void updateSearch(String searchTerm){
+        filteredList = ArrayListSearcher.search(listOfTrips,searchTerm);
+        notifyDataSetChanged();
+    }
+
     @Override
     public void onBindViewHolder(@NonNull TripAdapter.TripViewHolder holder, int position) {
-//        ArrayListSorter.insertionSort(listOfTrips,order);
-        ArrayListSearcher.search(listOfTrips,"2");
-        Trip current = listOfTrips.get(position);
+        
+        ArrayListSorter.insertionSort(filteredList,order);
+        Trip current = filteredList.get(position);
         holder.name.setText(current.getName());
         holder.desc.setText(current.getDesc());
         holder.containerView.setTag(current);
@@ -103,7 +112,7 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder
 
     @Override
     public int getItemCount() {
-        return listOfTrips.size();
+        return filteredList.size();
     }
 
     public class TripViewHolder extends RecyclerView.ViewHolder {
